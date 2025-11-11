@@ -1,44 +1,56 @@
 <!DOCTYPE HTML>
 <html>
 
-	<link rel="stylesheet" href="assets/css/main.css" />
-
-	<style>
-		.horizontal-scroll-container {
-			display: flex;            /* O truque para alinhar tudo lado a lado */
-			overflow-x: auto;         /* Cria o scroll horizontal */
-			overflow-y: hidden;       /* Esconde o scroll vertical */
-			padding-bottom: 20px;     /* Um espaço para a barra de scroll não colar no fim */
-		}
-
-		.horizontal-card {
-			flex: 0 0 auto;           /* Diz ao card para não encolher */
-			width: 300px;             /* Largura fixa de cada projeto (MUDE SE QUISER) */
-			margin-right: 20px;       /* Espaço entre os projetos */
-		}
-
-		/* Deixa a barra de scroll mais bonita (Opcional) */
-		.horizontal-scroll-container::-webkit-scrollbar {
-			height: 8px;
-		}
-		.horizontal-scroll-container::-webkit-scrollbar-track {
-			background: #f1f1f1;
-			border-radius: 4px;
-		}
-		.horizontal-scroll-container::-webkit-scrollbar-thumb {
-			background: #888;
-			border-radius: 4px;
-		}
-		.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
-			background: #555;
-		}
-	</style>
-	
 <head>
 	<title>Projetos by Sarah</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
 	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<style>
+		/* 1. CSS PARA O CARROSSEL (SCROLL HORIZONTAL) */
+		.horizontal-scroll-container {
+			display: flex;
+			overflow-x: auto;
+			overflow-y: hidden;
+			padding: 2em 0; /* Adiciona um respiro */
+		}
+
+		/* 2. CSS PARA OS CARDS DENTRO DO CARROSSEL (COM O ESPAÇAMENTO) */
+		.horizontal-scroll-container .work-item {
+			flex: 0 0 300px;     /* Largura fixa de 300px */
+			margin-right: 1.5em; /* << AQUI ESTÁ O ESPAÇAMENTO (NÃO FICARÁ GRUDADO) */
+			
+			/* Força o CSS do template a não quebrar o layout */
+			width: 300px !important; 
+			max-width: 300px !important;
+			float: none !important;
+			display: block !important;
+		}
+
+		/* 3. CSS PARA OS BOTÕES DO RODAPÉ (FALE COMIGO) */
+		#footer .actions {
+			display: flex;
+			flex-direction: column; /* Empilha os botões (um embaixo do outro) */
+			align-items: center;    /* Centraliza a pilha de botões */
+			width: 100%;
+		}
+		#footer .actions li {
+			width: 100%;
+			max-width: 350px;       /* Largura máxima dos botões */
+			margin: 0 0 1em 0;      /* Espaço entre os botões */
+		}
+		#footer .actions li a.button {
+			background-color: #333 !important; /* << FORÇA O BOTÃO A SER PRETO */
+			color: #fff !important;
+			border: none;
+			width: 100%; /* Faz o botão ocupar a largura */
+		}
+		#footer .actions li a.button:hover {
+			background-color: #555 !important; /* Cor ao passar o mouse */
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -75,43 +87,55 @@
 		</section>
 
 		<section id="two">
-	<h2>Portfólio</h2>
-	
-	<div class="horizontal-scroll-container">
+			<h2>Portfólio</h2>
+			
+			<div class="horizontal-scroll-container">
 
-		<article class="work-item horizontal-card">
-			<a href="images/fulls/01.jpg" class="image fit thumb">
-				<img src="images/thumbs/01.jpg" alt="PCB-KART" />
-			</a>
-			<h3>PCB-KART</h3>
-			<p>Descrição curta do seu projeto PCB-KART.</p>
-		</article>
+				<article class="work-item">
+					<a href="images/fulls/01.jpg" class="image fit thumb">
+						<img src="images/thumbs/01.jpg" alt="PCB-KART" />
+					</a>
+					<h3>PCB-KART</h3>
+					<p>Descrição curta do seu projeto PCB-KART.</p>
+				</article>
 
-		<article class="work-item horizontal-card">
-			<a href="images/fulls/02.jpg" class="image fit thumb">
-				<img src="images/thumbs/02.jpg" alt="[SEU PROJETO 2]" />
-			</a>
-			<h3>[SEU PROJETO 2]</h3>
-			<p>Descrição curta do seu segundo projeto.</p>
-		</article>
-		
-		<article class="work-item horizontal-card">
-			<a href="images/fulls/03.jpg" class="image fit thumb">
-				<img src="images/thumbs/03.jpg" alt="[SEU PROJETO 3]" />
-			</a>
-			<h3>[SEU PROJETO 3]</h3>
-			<p>Descrição curta do seu terceiro projeto.</p>
-		</article>
+				<article class="work-item">
+					<a href="images/fulls/02.jpg" class="image fit thumb">
+						<img src="images/thumbs/02.jpg" alt="[SEU PROJETO 2]" />
+					</a>
+					<h3>[SEU PROJETO 2]</h3>
+					<p>Descrição curta do seu segundo projeto.</p>
+				</article>
+				
+				<article class="work-item">
+					<a href="images/fulls/03.jpg" class="image fit thumb">
+						<img src="images/thumbs/03.jpg" alt="[SEU PROJETO 3]" />
+					</a>
+					<h3>[SEU PROJETO 3]</h3>
+					<p>Descrição curta do seu terceiro projeto.</p>
+				</article>
+				
+				<article class="work-item">
+					<a href="images/fulls/04.jpg" class="image fit thumb">
+						<img src="images/thumbs/04.jpg" alt="[SEU PROJETO 4]" />
+					</a>
+					<h3>[SEU PROJETO 4]</h3>
+					<p>Descrição curta do seu quarto projeto.</p>
+				</article>
 
-		</div> <ul class="actions">
-		<li><a href="#" class="button">Veja Outros Projetos</a></li>
-	</ul>
-</section>
+			</div> 
+			
+			<ul class="actions">
+				<li><a href="#" class="button">Veja Outros Projetos</a></li>
+			</ul>
+		</section>
 
 		<section id="three">
 			<h2>Meus Serviços</h2>
-			<div class="row">
-				<article class="col-6 col-12-xsmall work-item">
+
+			<div class="horizontal-scroll-container">
+				
+				<article class="work-item">
 					<a href="images/Micro.png" class="image fit thumb">
 						<img src="images/Micro.png" alt="Projeto Eletrônico" />
 					</a>
@@ -119,7 +143,7 @@
 					<p>Desenvolvimento e design de projetos com microcontroladores e sistemas embarcados.</p>
 				</article>
 
-				<article class="col-6 col-12-xsmall work-item">
+				<article class="work-item">
 					<a href="images/pcb.png" class="image fit thumb">
 						<img src="images/pcb.png" alt="Prototipagem de PCB" />
 					</a>
@@ -127,7 +151,7 @@
 					<p>Design de placas de circuito impresso (PCBs) e preparação para fabricação.</p>
 				</article>
 
-				<article class="col-6 col-12-xsmall work-item">
+				<article class="work-item">
 					<a href="images/code.png" class="image fit thumb">
 						<img src="images/code.png" alt="Programação" />
 					</a>
@@ -135,7 +159,7 @@
 					<p>Desenvolvimento de firmware para microcontroladores e sistemas embarcados.</p>
 				</article>
 
-				<article class="col-6 col-12-xsmall work-item">
+				<article class="work-item">
 					<a href="images/resistor.png" class="image fit thumb">
 						<img src="images/resistor.png" alt="Testes de Hardware" />
 					</a>
@@ -143,14 +167,16 @@
 					<p>Validação e depuração de circuitos eletrônicos e protótipos.</p>
 				</article>
 
-				<article class="col-6 col-12-xsmall work-item">
+				<article class="work-item">
 					<a href="images/binari.png" class="image fit thumb">
 						<img src="images/binari.png" alt="Testes de Firmware" />
 					</a>
 					<h3>Testes de Firmware</h3>
 					<p>Verificação e otimização de código para garantir o funcionamento do hardware.</p>
 				</article>
+
 			</div>
+
 			<ul class="actions">
 				<li><a href="#" class="button">Veja Todos os Serviços</a></li>
 			</ul>
@@ -158,8 +184,10 @@
 
 		<section id="four">
 			<h2>Meus Produtos</h2>
-			<div class="row">
-				<article class="col-6 col-12-xsmall work-item">
+			
+			<div class="horizontal-scroll-container">
+
+				<article class="work-item">
 					<a href="images/fulls/07.jpg" class="image fit thumb">
 						<img src="images/thumbs/07.jpg" alt="R2D2" />
 					</a>
@@ -167,7 +195,7 @@
 					<p>Descrição do seu produto R2D2. (Aqui você pode adicionar o link do Mercado Pago!).</p>
 				</article>
 
-				<article class="col-6 col-12-xsmall work-item">
+				<article class="work-item">
 					<a href="images/fulls/08.jpg" class="image fit thumb">
 						<img src="images/thumbs/08.jpg" alt="Robozito" />
 					</a>
@@ -175,14 +203,16 @@
 					<p>Descrição do seu produto Robozito.</p>
 				</article>
 				
-				<article class="col-6 col-12-xsmall work-item">
+				<article class="work-item">
 					<a href="images/fulls/09.jpg" class="image fit thumb">
 						<img src="images/thumbs/09.jpg" alt="Coração de LED" />
 					</a>
 					<h3>CORAÇÃO DE LED</h3>
 					<p>Descrição do seu produto Coração de LED.</p>
 				</article>
+
 			</div>
+			
 			<ul class="actions">
 				<li><a href="#" class="button">Veja Todos os Produtos</a></li>
 			</ul>
@@ -209,10 +239,12 @@
 	<footer id="footer">
 		<div class="inner">
 			<h2>Fale Comigo!</h2>
-			<ul class="actions" style="margin-top: 1.5em;">
-				<li><a href="https://linktr.ee/SEU_USUARIO" target="_blank" class="button primary">Botão de Linktree</a></li>
-				<li><a href="https://wa.me/SEU_NUMERO_COM_55" target="_blank" class="button primary">Botão de WhatsApp</a></li>
+			
+			<ul class="actions">
+				<li><a href="https://linktr.ee/SEU_USUARIO" target="_blank" class="button">Botão de Linktree</a></li>
+				<li><a href="https://wa.me/SEU_NUMERO_COM_55" target="_blank" class="button">Botão de WhatsApp</a></li>
 			</ul>
+			
 			<ul class="copyright" style="margin-top: 2em;">
 				<li>&copy; 2025 Projetos by Sarah</li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -222,7 +254,7 @@
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.poptrox.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
+	<script src="assetsZjs/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
