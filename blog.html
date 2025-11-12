@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Blog - Projetos by Sarah</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+<body class="is-preload">
+
+	<header id="header">
+		</header>
+
+	<div id="main">
+
+		<section id="blog-archive">
+			<header class="major">
+				<h2>Meu Blog</h2>
+			</header>
+
+			<input type="text" id="searchInput" onkeyup="filterPosts()" placeholder="Pesquisar por tema ou título...">
+
+			<hr />
+
+			<div id="postList">
+
+				<article class="blog-post-item">
+					<a href="posts/post-01.html" class="image fit">
+						<img src="images/fulls/10.jpg" alt="Tutorial de IMU" />
+					</a>
+					<h3>TÍTULO 1: Meu Tutorial de IMU com ESP32</h3>
+					<p>Este é o resumo (snippet) do meu post sobre ESP32 e IMU, onde eu explico como...</p>
+					<ul class="actions">
+						<li><a href="posts/post-01.html" class="button">Leia o Texto Completo</a></li>
+					</ul>
+				</article>
+
+				<article class="blog-post-item">
+					<a href="posts/post-02.html" class="image fit">
+						<img src="images/fulls/11.jpg" alt="Outro Post" />
+					</a>
+					<h3>TÍTULO 2: Meu Projeto de PCB-Kart</h3>
+					<p>Aqui é o resumo do post antigo sobre o Kart, que fala sobre o design da PCB...</p>
+					<ul class="actions">
+						<li><a href="posts/post-02.html" class="button">Leia o Texto Completo</a></li>
+					</ul>
+				</article>
+
+				</div>
+		</section>
+
+	</div>
+
+	<footer id="footer">
+		</footer>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+	function filterPosts() {
+		// Pega o que o usuário digitou (em minúsculas)
+		var input = document.getElementById("searchInput");
+		var filter = input.value.toLowerCase();
+
+		// Pega a lista de posts
+		var postList = document.getElementById("postList");
+		var posts = postList.getElementsByClassName("blog-post-item");
+
+		// Loop por todos os posts
+		for (var i = 0; i < posts.length; i++) {
+			// Pega o título (h3) e o parágrafo (p)
+			var title = posts[i].getElementsByTagName("h3")[0];
+			var snippet = posts[i].getElementsByTagName("p")[0];
+			
+			// Junta o texto do título e do snippet
+			var textToSearch = title.textContent.toLowerCase() + snippet.textContent.toLowerCase();
+
+			// Se o texto digitado ESTÁ no texto do post, mostra o post
+			if (textToSearch.indexOf(filter) > -1) {
+				posts[i].style.display = "";
+			} 
+			// Senão, esconde o post
+			else {
+				posts[i].style.display = "none";
+			}
+		}
+	}
+	</script>
+
+</body>
+</html>
