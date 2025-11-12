@@ -14,20 +14,36 @@
 			display: flex;
 			overflow-x: auto;
 			overflow-y: hidden;
-			padding: 2em 0; /* Adiciona um respiro */
+			padding: 2em 0;
 		}
 
 		/* 2. CSS PARA OS CARDS DENTRO DO CARROSSEL (COM O ESPAÇAMENTO) */
 		.horizontal-scroll-container .work-item {
-			flex: 0 0 300px;     /* Largura fixa de 300px */
-			margin-right: 1.5em; /* << AQUI ESTÁ O ESPAÇAMENTO (NÃO FICARÁ GRUDADO) */
-			
-			/* Força o CSS do template a não quebrar o layout */
+			flex: 0 0 300px;
+			margin-right: 1.5em; 
 			width: 300px !important; 
 			max-width: 300px !important;
 			float: none !important;
 			display: block !important;
 		}
+
+		/* 3. NOVO! - CSS PARA OS ÍCONES DE SERVIÇO (SEÇÃO 3) 
+		*/
+		
+		/* Remove o fundo branco do link que envolve a imagem */
+		#three .work-item .image {
+			background: none !important; 
+		}
+
+		/* Define o tamanho e o ajuste dos ícones */
+		#three .work-item .image img {
+			width: 100px;     /* << MUDE AQUI O TAMANHO (ex: 100px) */
+			height: 100px;    /* << MUDE AQUI O TAMANHO (ex: 100px) */
+			object-fit: contain; /* Garante que o ícone caiba sem distorcer */
+			margin: 0 auto;      /* Centraliza o ícone */
+			display: block;
+		}
+
 	</style>
 </head>
 
@@ -114,41 +130,41 @@
 			<div class="horizontal-scroll-container">
 				
 				<article class="work-item">
-					<a href="images/Micro.png" class="image fit thumb">
+					<span class="image fit thumb">
 						<img src="images/Micro.png" alt="Projeto Eletrônico" />
-					</a>
+					</span>
 					<h3>Projeto Eletrônico</h3>
 					<p>Desenvolvimento e design de projetos com microcontroladores e sistemas embarcados.</p>
 				</article>
 
 				<article class="work-item">
-					<a href="images/pcb.png" class="image fit thumb">
+					<span class="image fit thumb">
 						<img src="images/pcb.png" alt="Prototipagem de PCB" />
-					</a>
+					</span>
 					<h3>Prototipagem de PCB</h3>
 					<p>Design de placas de circuito impresso (PCBs) e preparação para fabricação.</p>
 				</article>
 
 				<article class="work-item">
-					<a href="images/code.png" class="image fit thumb">
+					<span class="image fit thumb">
 						<img src="images/code.png" alt="Programação" />
-					</a>
+					</span>
 					<h3>Programação</h3>
 					<p>Desenvolvimento de firmware para microcontroladores e sistemas embarcados.</p>
 				</article>
 
 				<article class="work-item">
-					<a href="images/resistor.png" class="image fit thumb">
+					<span class="image fit thumb">
 						<img src="images/resistor.png" alt="Testes de Hardware" />
-					</a>
+					</span>
 					<h3>Testes de Hardware</h3>
 					<p>Validação e depuração de circuitos eletrônicos e protótipos.</p>
 				</article>
 
 				<article class="work-item">
-					<a href="images/binari.png" class="image fit thumb">
+					<span class="image fit thumb">
 						<img src="images/binari.png" alt="Testes de Firmware" />
-					</a>
+					</span>
 					<h3>Testes de Firmware</h3>
 					<p>Verificação e otimização de código para garantir o funcionamento do hardware.</p>
 				</article>
@@ -235,7 +251,7 @@
 	<script src="assets/js/jquery.poptrox.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
+	<script src="assets:js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
 </body>
