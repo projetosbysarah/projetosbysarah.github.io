@@ -28,28 +28,6 @@
 			float: none !important;
 			display: block !important;
 		}
-
-		/* 3. CSS PARA OS BOTÕES DO RODAPÉ (FALE COMIGO) */
-		#footer .actions {
-			display: flex;
-			flex-direction: column; /* Empilha os botões (um embaixo do outro) */
-			align-items: center;    /* Centraliza a pilha de botões */
-			width: 100%;
-		}
-		#footer .actions li {
-			width: 100%;
-			max-width: 350px;       /* Largura máxima dos botões */
-			margin: 0 0 1em 0;      /* Espaço entre os botões */
-		}
-		#footer .actions li a.button {
-			background-color: #333 !important; /* << FORÇA O BOTÃO A SER PRETO */
-			color: #fff !important;
-			border: none;
-			width: 100%; /* Faz o botão ocupar a largura */
-		}
-		#footer .actions li a.button:hover {
-			background-color: #555 !important; /* Cor ao passar o mouse */
-		}
 	</style>
 </head>
 
@@ -238,11 +216,12 @@
 
 	<footer id="footer">
 		<div class="inner">
-			<h2>Fale Comigo!</h2>
 			
-			<ul class="actions">
-				<li><a href="https://linktr.ee/SEU_USUARIO" target="_blank" class="button">Botão de Linktree</a></li>
-				<li><a href="https://wa.me/SEU_NUMERO_COM_55" target="_blank" class="button">Botão de WhatsApp</a></li>
+			<ul class="icons">
+				<li><a href="https_://linktr.ee/SEU_USUARIO" target="_blank" class="icon solid fa-link"><span class="label">Linktree</span></a></li>
+				<li><a href="https_://wa.me/SEU_NUMERO" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+				<li><a href="https_://github.com/SEU_USUARIO" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="mailto:SEU_EMAIL@gmail.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 			</ul>
 			
 			<ul class="copyright" style="margin-top: 2em;">
@@ -254,7 +233,7 @@
 
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.poptrox.min.js"></script>
-	<script src="assetsZjs/browser.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
