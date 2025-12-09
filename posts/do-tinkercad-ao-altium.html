@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Do Tinkercad ao Altium: Coração de LED - Projetos by Sarah</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
+	<link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<header id="header">
+		<div class="inner">
+			<a href="../index.html" class="image avatar">
+				<img src="../images/avatar.jpg" alt="Projetos by Sarah" />
+			</a>
+			<h1>
+				<strong>PROJETOS BY SARAH</strong>,<br />
+				Engenheira Eletrônica<br />
+				Designer de PCB, modeladora 3D e Criadora de Projetos Eletrônicos.
+			</h1>
+		</div>
+	</header>
+
+	<div id="main">
+
+		<section id="one">
+			<header class="major">
+				<h2>Do Tinkercad ao Altium: Criando um Coração de LED Pulsante (Sem Código!)</h2>
+				<p><strong>A importância da simulação e da eletrônica analógica no design de PCBs.</strong></p>
+			</header>
+
+			<span class="image fit"><img src="../images/thumbs/09.jpg" alt="Simulação no Tinkercad" /></span>
+
+			<p>Muitas vezes, quando pensamos em projetos eletrônicos hoje em dia, já pensamos logo em um ESP32 ou Arduino. Mas existe uma beleza (e um desafio) incrível na <strong>eletrônica analógica pura</strong>.</p>
+			<p>Hoje vou mostrar o fluxo de desenvolvimento de um dos meus produtos favoritos: o <strong>Coração de LED</strong>. O desafio aqui era criar um circuito que "respirasse" (piscasse) sem usar nenhuma linha de programação.</p>
+
+			<hr />
+
+			<h3>1. A Simulação no Tinkercad 🛠️</h3>
+			<p>Antes de abrir o Altium ou gastar dinheiro com fabricação, o primeiro passo foi validar a teoria. Para isso, usei o <strong>Tinkercad</strong>.</p>
+			<p>O circuito é um clássico <strong>Multivibrador Astável</strong> com transistores. Basicamente, é um oscilador onde dois capacitores se carregam e descarregam alternadamente, ligando e desligando os transistores (e consequentemente, os LEDs) em um ciclo infinito.</p>
+			
+			<span class="image fit"><img src="../images/fulls/tinkercad-print.jpg" alt="Circuito no Tinkercad" /></span>
+			
+			<p><strong>Por que simular?</strong></p>
+			<ul>
+				<li><strong>Ajuste de Frequência:</strong> No Tinkercad, eu pude trocar os valores dos capacitores e resistores em tempo real para decidir qual velocidade da piscada ficava mais bonita.</li>
+				<li><strong>Sem Código:</strong> Como é um circuito analógico, não existe firmware. A lógica está na física dos componentes! Isso reduz custos e complexidade.</li>
+			</ul>
+
+			<h3>2. O Design Profissional no Altium Designer 🖥️</h3>
+			<p>Com a lógica validada, levei o projeto para o "mundo adulto": o <strong>Altium Designer</strong>. Aqui o objetivo não era mais testar se funcionava, mas sim fazer funcionar em um formato específico.</p>
+			
+			<p>O desafio foi rotear as trilhas para que os LEDs formassem o desenho perfeito de um coração, mantendo o circuito oscilador compacto e escondido.</p>
+
+			<span class="image fit"><img src="../images/fulls/altium-print.jpg" alt="PCB no Altium Designer" /></span>
+
+			<h3>3. O Resultado Final ✨</h3>
+			<p>O resultado é uma placa que ensina sobre carga e descarga de capacitores e chaves transistorizadas, tudo isso em um formato visualmente atraente. Sair da simulação simples do Tinkercad para uma PCB profissional no Altium mostra como ferramentas diferentes se complementam no fluxo de engenharia.</p>
+
+			<hr />
+
+			<p>Gostou desse fluxo de trabalho? Se você quer aprender mais sobre simulação ou design de PCB, fique ligado nos próximos posts!</p>
+
+			<ul class="actions" style="display: flex; justify-content: space-between;">
+				<li><a href="../blog.html" class="button">Voltar ao Blog</a></li>
+				<li><a href="../index.html" class="button">Voltar ao Menu Principal</a></li>
+			</ul>
+
+		</section>
+
+	</div>
+
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="https://w.app/rgtn2t" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+				<li><a href="https://github.com/projetosbysarah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="https://br.linkedin.com/in/sarah-de-almeida-ramos-b6703b221" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="https://www.instagram.com/sarah.ramos18" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://www.tiktok.com/@sarah.ramos18?_r=1&_t=ZS-91K7nBwhfma" target="_blank" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
+			</ul>
+			<ul class="copyright" style="margin-top: 2em;">
+				<li>&copy; 2025 Projetos by Sarah</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.poptrox.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
