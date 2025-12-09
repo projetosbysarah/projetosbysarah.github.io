@@ -41,9 +41,9 @@
 
 			<h3>1. A Simulação no Tinkercad 🛠️</h3>
 			<p>Antes de abrir o Altium ou gastar dinheiro com fabricação, o primeiro passo foi validar a teoria. Para isso, usei o <strong>Tinkercad</strong>.</p>
-			<p>O circuito é um clássico <strong>Multivibrador Astável</strong> com transistores. Basicamente, é um oscilador onde dois capacitores se carregam e descarregam alternadamente, ligando e desligando os transistores (e consequentemente, os LEDs) em um ciclo infinito.</p>
-			
-			<span class="image fit"><img src="../images/fulls/simulacaoTinkecad.jpg" alt="Circuito no Tinkercad" /></span>
+			<p>O circuito foge do básico e utiliza uma dupla clássica da eletrônica: o <strong>LM556 (Dual Timer)</strong> e o <strong>74HC4017 (Contador Johnson)</strong>.</p>
+			<p>O funcionamento é uma dança sincronizada: o LM556 atua como um oscilador, gerando pulsos de clock (o "ritmo" da batida). Esse sinal é enviado para o 4017, que conta esses pulsos e ativa suas saídas uma a uma em sequência. O resultado é que os grupos de LEDs acendem em etapas, criando um efeito de movimento fluido e "preenchendo" o coração, muito mais sofisticado que um simples pisca-pisca.</p>
+			<span class="image fit"><img src="../images/fulls/simulacaoTinkecad.png" alt="Circuito no Tinkercad" /></span>
 			
 			<p><strong>Por que simular?</strong></p>
 			<ul>
@@ -56,7 +56,7 @@
 			
 			<p>O desafio foi rotear as trilhas para que os LEDs formassem o desenho perfeito de um coração, mantendo o circuito oscilador compacto e escondido.</p>
 
-			<span class="image fit"><img src="../images/fulls/altium-print.jpg" alt="PCB no Altium Designer" /></span>
+			<span class="image fit"><img src="../images/fulls/AltiumLedCoracao.png" alt="PCB no Altium Designer" /></span>
 
 			<h3>3. O Resultado Final ✨</h3>
 			<p>O resultado é uma placa que ensina sobre carga e descarga de capacitores e chaves transistorizadas, tudo isso em um formato visualmente atraente. Sair da simulação simples do Tinkercad para uma PCB profissional no Altium mostra como ferramentas diferentes se complementam no fluxo de engenharia.</p>
