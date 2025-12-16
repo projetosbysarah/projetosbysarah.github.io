@@ -21,6 +21,13 @@
 	font-size: 1.5em !important;  /* << MUDE ESTE VALOR (ex: 2em, 2.5em) */
 	line-height: 1.2em; /* Ajusta o espaçamento entre linhas */
 }
+
+		/* 7. NOVO! - Padroniza a altura de TODAS as imagens dos carrosséis */
+.horizontal-scroll-container .work-item .image img {
+    height: 200px !important;   /* Define uma altura fixa para todas */
+    width: 100% !important;     /* Garante que ocupe a largura do card */
+    object-fit: cover !important; /* Corta as bordas se sobrar, sem esticar a imagem */
+}
 		/* 5. NOVO! - Deixa os ícones do rodapé brancos sólidos */
 #footer .icons a {
 	color: #ffffff !important;   /* Define a cor como branco sólido */
