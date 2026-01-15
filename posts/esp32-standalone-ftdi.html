@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>ESP32 Standalone: VS Code, PlatformIO e FTDI - Projetos by Sarah</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<header id="header">
+		<div class="inner">
+			<a href="../index.html" class="image avatar"><img src="../images/avatar.jpg" alt="Projetos by Sarah" /></a>
+			<h1><strong>PROJETOS BY SARAH</strong>,<br /> Engenheira Eletrônica<br /> Designer de PCB & Firmware Developer.</h1>
+		</div>
+	</header>
+
+	<div id="main">
+		<section id="one">
+			<header class="major">
+				<h2>Programando o ESP32 "Raiz": Do Chip Puro ao Firmware com VS Code e PlatformIO</h2>
+				<p><strong>Como economizar espaço e custo programando apenas o chip via FTDI e ESP-IDF.</strong></p>
+			</header>
+
+			<span class="image fit"><img src="../images/thumbs/esp-vscode-capa.jpg" alt="VS Code e ESP32" /></span>
+
+			<p>Quando começamos com microcontroladores, é normal usar aquelas placas de desenvolvimento prontas (como o NodeMCU ou ESP32 DevKit) conectadas via USB. Elas são ótimas, mas têm um problema: ocupam muito espaço e custam mais caro para um produto final.</p>
+			
+			<p>No post de hoje, vou mostrar meu fluxo de trabalho profissional: programar diretamente o <strong>chip ESP32</strong> (standalone) usando um conversor FTDI e o ambiente de desenvolvimento mais robusto do mercado: <strong>VS Code + PlatformIO com framework ESP-IDF em C/C++.</strong></p>
+
+			<hr />
+
+			<h3>1. O Ambiente: VS Code + PlatformIO 💻</h3>
+			<p>Esqueça a IDE do Arduino. Para ter controle total sobre o hardware, uso o <strong>Visual Studio Code</strong> com a extensão <strong>PlatformIO</strong>.</p>
+			<p>Essa combinação permite:</p>
+			<ul>
+				<li><strong>IntelliSense:</strong> O código se completa sozinho (o que ajuda muito com as funções complexas do ESP-IDF).</li>
+				<li><strong>Organização:</strong> Separar o código em vários arquivos `.c` e `.h` de forma profissional.</li>
+				<li><strong>Framework ESP-IDF:</strong> Acesso direto à API oficial da Espressif, permitindo usar os dois núcleos do processador (FreeRTOS), Bluetooth e Wi-Fi com máxima performance.</li>
+			</ul>
+
+			<h3>2. O Segredo: Conversor FTDI 🔌</h3>
+			<p>Como o chip ESP32 puro não tem porta USB, precisamos de uma "ponte" para conversar com o computador. É aqui que entra o <strong>Módulo FTDI (USB para Serial)</strong>.</p>
+			
+			<p>O FTDI traduz os dados da USB do computador para os pinos <strong>TX e RX</strong> que o microcontrolador entende. A conexão básica é cruzada:</p>
+			<ul>
+				<li><strong>TX do FTDI</strong> liga no <strong>RX do ESP32</strong>.</li>
+				<li><strong>RX do FTDI</strong> liga no <strong>TX do ESP32</strong>.</li>
+				<li><strong>GND</strong> tem que ser comum entre os dois!</li>
+			</ul>
+
+			<span class="image fit"><img src="../images/fulls/ftdi-modulo.png" alt="Módulo FTDI" /></span>
+
+			<h3>3. O Circuito de Programação (O "Pulo do Gato") 🐱‍👤</h3>
+			<p>Não basta ligar os fios. Para o ESP32 aceitar um novo código, ele precisa entrar no <strong>Modo de Boot</strong> (Download Mode). Nas placas prontas, um chip faz isso sozinho. No nosso caso, precisamos forçar isso via hardware.</p>
+
+			<p>Preparei esse circuito de gravação que uso nas minhas bancadas. Ele garante que o chip entre no modo correto:</p>
+			
+			<span class="image fit"><img src="../images/fulls/circuito-gravacao-esp.jpg" alt="Esquemático ou Foto do Circuito de Gravação" /></span>
+
+			<p><strong>A Lógica do Boot:</strong></p>
+			<ol>
+				<li>Pino <strong>GPIO 0</strong> deve estar ligado ao GND (nível baixo).</li>
+				<li>Pino <strong>EN (Enable/Reset)</strong> recebe um pulso de GND para reiniciar o chip.</li>
+				<li>Quando o chip acorda e vê o GPIO 0 no GND, ele aguarda o código novo vindo do FTDI.</li>
+			</ol>
+			<p>Com esse setup, consigo desenhar minhas próprias PCBs (como a da vending machine que estou fazendo!) colocando apenas o chip ESP32, o que deixa a placa mais barata e compacta, plugando meu gravador externo apenas na hora de atualizar.</p>
+
+			<hr />
+			<p>Quer ver o código em C rodando nesse setup? Fique ligado nos próximos posts ou confira meu GitHub!</p>
+
+			<ul class="actions" style="display: flex; justify-content: space-between;">
+				<li><a href="../blog.html" class="button">Voltar ao Blog</a></li>
+				<li><a href="../index.html" class="button">Voltar ao Início</a></li>
+			</ul>
+		</section>
+	</div>
+
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="https://github.com/projetosbysarah" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; 2026 Projetos by Sarah</li>
+			</ul>
+		</div>
+	</footer>
+
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
