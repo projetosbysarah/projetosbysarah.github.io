@@ -8,6 +8,30 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
+
+		/* Pinta o fundo do carrossel com o seu laranja padrão */
+    .horizontal-scroll-container {
+        background-color: #ff914d !important; 
+        padding: 30px 20px !important;
+        border-radius: 15px;
+        margin-bottom: 2em;
+    }
+
+    /* Ajusta os textos dos cards para branco para dar contraste com o laranja */
+    .horizontal-scroll-container .work-item h3, 
+    .horizontal-scroll-container .work-item p {
+        color: #ffffff !important;
+    }
+
+    /* Estiliza a barra de rolagem para combinar */
+    .horizontal-scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 10px;
+    }
+    
+    .horizontal-scroll-container::-webkit-scrollbar {
+        height: 8px;
+    }
 		/* --- CONFIGURAÇÕES DO HEADER / SIDEBAR --- */
 		#header .inner {
 			display: flex !important;
