@@ -8,7 +8,44 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<style>
-		/* 1. CSS PARA O CARROSSEL (SCROLL HORIZONTAL) */
+		/* --- CONFIGURAÇÕES DO HEADER / SIDEBAR --- */
+		#header .inner {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			text-align: center !important;
+		}
+
+		/* Ajuste da Logo para não ficar gigante nem redonda */
+		.logo-container {
+			display: block !important;
+			border-bottom: none !important;
+			margin: 1em 0 1.5em 0 !important;
+			width: 100% !important;
+			max-width: 180px !important; /* Tamanho ideal para a barra lateral */
+		}
+
+		.logo-container img {
+			width: 100% !important;
+			height: auto !important;
+			border-radius: 0 !important; /* Garante que a logo NÃO fique redonda */
+			display: block !important;
+		}
+
+		/* Mantém o Avatar redondo como o original */
+		#header .image.avatar {
+			border-radius: 100% !important;
+			margin: 0 auto !important;
+		}
+
+		#header h1 strong {
+			font-size: 1.5em !important;
+			line-height: 1.2em;
+			display: block;
+			color: #ffffff !important;
+		}
+
+		/* --- CARROSSEL (SCROLL HORIZONTAL) --- */
 		.horizontal-scroll-container {
 			display: flex;
 			overflow-x: auto;
@@ -17,7 +54,6 @@
 			-webkit-overflow-scrolling: touch;
 		}
 
-		/* 2. CSS PARA OS CARDS DENTRO DO CARROSSEL */
 		.horizontal-scroll-container .work-item {
 			flex: 0 0 300px;
 			margin-right: 1.5em;
@@ -27,59 +63,31 @@
 			display: block !important;
 		}
 
-		/* 3. PADRONIZAÇÃO DE ALTURA DAS IMAGENS */
+		/* Padroniza altura das imagens nos carrosséis */
 		.horizontal-scroll-container .work-item .image img {
 			height: 200px !important;
 			width: 100% !important;
 			object-fit: cover !important;
 		}
 
-		/* 4. AJUSTE DA LOGO NA BARRA LATERAL */
-		.logo-container {
-			display: block;
-			border: none !important;
-			margin: 0 auto 1.5em auto;
-			width: 100%;
-			max-width: 180px; /* Tamanho ideal para não bugar */
+		/* --- SEÇÃO DE SERVIÇOS (REMOVER ESCURECIMENTO) --- */
+		#three .work-item .image::before, 
+		#three .work-item .image::after {
+			display: none !important; /* Remove o fundo escuro e o 'View' */
 		}
 
-		.logo-container img {
-			width: 100%;
-			height: auto;
-			display: block;
-			border-radius: 0 !important;
-		}
-
-		/* 5. ESTILO DO NOME E TÍTULOS */
-		#header h1 strong {
-			font-size: 1.5em !important;
-			line-height: 1.2em;
-			display: block;
-			margin-top: 0.5em;
-		}
-
-		/* 6. ÍCONES DO RODAPÉ BRANCOS SÓLIDOS */
+		/* --- ESTILOS GERAIS --- */
 		#footer .icons a {
 			color: #ffffff !important;
 			opacity: 1 !important;
+			border-bottom: none !important;
 		}
 
-		#footer .icons a:hover {
-			color: #f1f1f1 !important;
-		}
-
-		/* 7. CAIXA DO BLOG NA HOME */
 		#five article {
 			border: 2px solid #555;
 			border-radius: 10px;
-			background-color: transparent;
 			padding: 1.5em;
-		}
-
-		/* 8. REMOVE EFEITOS INDESEJADOS NOS ÍCONES DE SERVIÇO */
-		#three .work-item .image.fit::after, 
-		#three .work-item .image.fit::before {
-			display: none !important;
+			margin-bottom: 2em;
 		}
 	</style>
 </head>
@@ -91,7 +99,7 @@
 			<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="Sarah" /></a>
 			
 			<a href="index.html" class="logo-container">
-				<img src="images/Logo.png" alt="Projetos by Sarah" />
+				<img src="images/Logo.png" alt="Logo Projetos by Sarah" />
 			</a>
 
 			<h1><strong>Engenheira Eletrônica</strong><br /> 
@@ -106,7 +114,7 @@
 				<h2>Oi, meu nome é Sarah.</h2>
 			</header>
 			<p>
-				Eu sou uma engenheira eletrônica apaixonada por criar projetos inovadores, desde o design da PCB no Altium até a programação do firmware em PlatformIO. Com experiência em microcontroladores, prototipagem de PCB e sistemas embarcados, busco soluções criativas e eficientes. Formada em Engenharia Elétrica pela UEL.
+				Eu sou uma engenheira eletrônica apaixonada por criar projetos inovadores, desde o design da PCB no Altium Designer até a programação do firmware em PlatformIO e ESP-IDF. Com vasta experiência em microcontroladores e sistemas embarcados, busco transformar ideias em hardware funcional. Formada em Engenharia Elétrica pela UEL.
 			</p>
 			<ul class="actions">
 				<li><a href="#two" class="button">Conheça meu trabalho</a></li>
@@ -121,7 +129,7 @@
 						<img src="images/thumbs/PlacaSom.png" alt="Amplificador Bluetooth" />
 					</a>
 					<h3>Amplificador Bluetooth</h3>
-					<p>PCB desenvolvida para um sistema de áudio com recepção e controle via módulo Bluetooth.</p>
+					<p>PCB profissional desenvolvida para sistemas de áudio com controle via módulo Bluetooth.</p>
 				</article>
 				
 				<article class="work-item">
@@ -129,7 +137,7 @@
 						<img src="images/thumbs/01.jpg" alt="PCB-KART" />
 					</a>
 					<h3>PCB-KART</h3>
-					<p>Projeto com ESP32, Bluetooth e Lo-Ra para controle a distância e cronômetro regressivo.</p>
+					<p>Controle via ESP32 e Lo-Ra com telemetria e cronômetro embutido para karts.</p>
 				</article>
 
 				<article class="work-item">
@@ -137,15 +145,7 @@
 						<img src="images/thumbs/02.jpg" alt="PLOTTER 2D" />
 					</a>
 					<h3>PLOTTER 2D</h3>
-					<p>Arduino Uno com motores de passo, drivers integrados e comandos via Gcode.</p>
-				</article>
-
-				<article class="work-item">
-					<a href="images/fulls/03.jpg" class="image fit thumb">
-						<img src="images/thumbs/03.jpg" alt="DRUMME" />
-					</a>
-					<h3>DRUMME - BATERIA ELETRÔNICA</h3>
-					<p>Módulo MIDI emulador para tocar bateria virtual sem necessidade de cabos MIDI complexos.</p>
+					<p>Máquina CNC controlada por comandos G-code desenvolvida com Arduino.</p>
 				</article>
 
 				<article class="work-item">
@@ -153,11 +153,11 @@
 						<img src="images/thumbs/06.jpg" alt="CORAÇÃO DE LED" />
 					</a>
 					<h3>CORAÇÃO DE LED</h3>
-					<p>Circuito oscilador analógico que faz os LEDs piscarem sequencialmente.</p>
+					<p>Projeto de eletrônica analógica focado em efeitos visuais sequenciais e treino de solda.</p>
 				</article>
 			</div>
 			<ul class="actions">
-				<li><a href="https://github.com/projetosbysarah" target="_blank" class="button">Veja Outros Projetos</a></li>
+				<li><a href="https://github.com/projetosbysarah" target="_blank" class="button">Veja no GitHub</a></li>
 			</ul>
 		</section>
 
@@ -167,22 +167,17 @@
 				<article class="work-item">
 					<span class="image fit"><img src="images/icons/Esquematico.png" alt="Esquemático" /></span>
 					<h3>Esquemático Eletrônico</h3>
-					<p>Desenvolvimento de projetos com microcontroladores e sistemas embarcados.</p>
+					<p>Desenvolvimento de diagramas lógicos e seleção de componentes para seu projeto.</p>
 				</article>
 				<article class="work-item">
 					<span class="image fit"><img src="images/icons/PCB.png" alt="PCB" /></span>
 					<h3>Prototipagem de PCB</h3>
-					<p>Design de placas e preparação completa para fabricação industrial.</p>
+					<p>Design de placas industriais com foco em fabricação (DFM) e performance.</p>
 				</article>
 				<article class="work-item">
 					<span class="image fit"><img src="images/icons/Prog.png" alt="Programação" /></span>
 					<h3>Programação</h3>
-					<p>Desenvolvimento de firmware profissional para sistemas embarcados.</p>
-				</article>
-				<article class="work-item">
-					<span class="image fit"><img src="images/icons/Montagem.png" alt="Montagem" /></span>
-					<h3>Montagem de Hardware</h3>
-					<p>Montagem, validação e depuração de circuitos e protótipos.</p>
+					<p>Criação de firmwares otimizados em C/C++ para diversos microcontroladores.</p>
 				</article>
 			</div>
 			<ul class="actions">
@@ -198,18 +193,18 @@
 						<img src="images/thumbs/09.png" alt="PLACA DRUMME" />
 					</a>
 					<h3>PLACA DRUMME</h3>
-					<p>Placa virgem para montagem do seu próprio módulo de bateria eletrônica.</p>
+					<p>Módulo para baterias eletrônicas customizadas (DIY).</p>
 				</article>
 				<article class="work-item">
 					<a href="images/fulls/fotocoracao.jpeg" class="image fit thumb">
 						<img src="images/fulls/fotocoracao.jpeg" alt="PLACA CORAÇÃO" />
 					</a>
-					<h3>CORAÇÃO DE LED</h3>
-					<p>Placa profissional para treino de solda e estudos de eletrônica analógica.</p>
+					<h3>PCB CORAÇÃO (VIRGEM)</h3>
+					<p>Kit ideal para quem quer aprender a soldar componentes eletrônicos.</p>
 				</article>
 			</div>
 			<ul class="actions">
-				<li><a href="https://shopee.com.br/sarahramos1" target="_blank" class="button">Link da Loja</a></li>
+				<li><a href="https://shopee.com.br/sarahramos1" target="_blank" class="button">Ver na Shopee</a></li>
 			</ul>
 		</section>
 
@@ -217,15 +212,14 @@
 			<h2>Meu Blog</h2>
 			<article>
 				<a href="posts/esp32-standalone-ftdi.html" class="image fit">
-					<img src="images/fulls/esp-vscode-capa.jpg" alt="Programação ESP32" />
+					<img src="images/fulls/esp-vscode-capa.jpg" alt="Blog ESP32" />
 				</a>
-				<h3>ESP32 "Raiz": Programando o Chip Puro com VS Code e PlatformIO</h3>
-				<p>Aprenda a usar o conversor FTDI e o circuito de boot para programar o chip ESP32 diretamente na sua PCB customizada.</p>
+				<h3>ESP32 Standalone: Programação via FTDI e VS Code</h3>
+				<p>Aprenda a configurar seu ambiente profissional para programar chips ESP32 puros.</p>
+				<ul class="actions">
+					<li><a href="posts/esp32-standalone-ftdi.html" class="button">Ler Post Completo</a></li>
+				</ul>
 			</article>
-			<ul class="actions" style="display: flex; justify-content: space-between; margin-top: 1em;">
-				<li><a href="posts/esp32-standalone-ftdi.html" class="button">Leia Mais</a></li>
-				<li><a href="blog.html" class="button">Ver Todos</a></li>
-			</ul>
 		</section>
 
 	</div>
@@ -239,7 +233,7 @@
 				<li><a href="https://www.instagram.com/sarah.ramos18" target="_blank" class="icon brands fa-instagram"></a></li>
 				<li><a href="https://www.tiktok.com/@sarah.ramos18" target="_blank" class="icon brands fa-tiktok"></a></li>
 			</ul>
-			<ul class="copyright" style="margin-top: 2em;">
+			<ul class="copyright">
 				<li>&copy; 2026 Projetos by Sarah</li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 			</ul>
