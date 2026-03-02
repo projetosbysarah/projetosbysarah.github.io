@@ -3220,27 +3220,30 @@ input, select, textarea {
 
 	}
 
-/* Faz a logo preencher o espaço total da barra lateral */
+/* Ajuste Fino da Logo - Elegante e Proporcional */
 #header .logo-principal {
     display: block;
-    width: 100%;           /* Ocupa toda a largura disponível */
-    margin: 0 0 2em 0;     /* Espaço em relação ao texto debaixo */
+    width: 100%;
+    max-width: 220px;    /* Define um tamanho máximo para não ficar gigante */
+    margin: 0 auto 1.5em auto; /* Centraliza e dá espaço para o texto abaixo */
     border: none;
-    border-radius: 0;      /* Garante que não fique redonda */
+    border-radius: 0;
     background: transparent;
 }
 
 #header .logo-principal img {
-    width: 100% !important; /* Força a imagem a esticar até a borda */
+    width: 100% !important;
     height: auto;
-    max-width: none !important; 
-    border-radius: 0 !important; /* Remove qualquer arredondamento */
+    max-width: 100%;
+    border-radius: 0 !important;
+    display: block;
 }
 
-/* Centraliza o conteúdo caso a logo seja menor que a barra */
+/* Garante que o container da logo não force larguras estranhas */
 #header .inner {
-    text-align: center;
+    padding: 2em;        /* Espaçamento interno da barra lateral */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Mantém tudo centralizado */
+    text-align: center;
 }
