@@ -3219,34 +3219,3 @@ input, select, textarea {
 			}
 
 	}
-
-/* Reseta configurações que podem estar bugando o header */
-#header .inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2em;
-    width: 100%;
-}
-
-/* Ajuste específico para a logo não 'vazar' */
-.logo-container {
-    display: block;
-    border: none;
-    margin-bottom: 1.5em;
-    width: 100%;
-    max-width: 180px; /* Tamanho ideal para não bugar o layout */
-}
-
-.logo-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 0 !important; /* Garante que não fique redonda */
-}
-
-/* Remove qualquer efeito de hover ou borda na logo */
-.logo-container:hover {
-    border: none !important;
-}
