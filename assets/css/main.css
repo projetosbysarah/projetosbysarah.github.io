@@ -3219,3 +3219,28 @@ input, select, textarea {
 			}
 
 	}
+
+/* Faz a logo preencher o espaço total da barra lateral */
+#header .logo-principal {
+    display: block;
+    width: 100%;           /* Ocupa toda a largura disponível */
+    margin: 0 0 2em 0;     /* Espaço em relação ao texto debaixo */
+    border: none;
+    border-radius: 0;      /* Garante que não fique redonda */
+    background: transparent;
+}
+
+#header .logo-principal img {
+    width: 100% !important; /* Força a imagem a esticar até a borda */
+    height: auto;
+    max-width: none !important; 
+    border-radius: 0 !important; /* Remove qualquer arredondamento */
+}
+
+/* Centraliza o conteúdo caso a logo seja menor que a barra */
+#header .inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
