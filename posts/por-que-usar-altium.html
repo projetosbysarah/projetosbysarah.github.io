@@ -11,18 +11,62 @@
 
 <body class="is-preload">
 
-	<header id="header">
-		<div class="inner">
-			<a href="../index.html" class="image avatar">
-				<img src="../images/avatar.jpg" alt="Projetos by Sarah" />
-			</a>
-			<h1>
-				<strong>PROJETOS BY SARAH</strong>,<br />
-				Engenheira Eletrônica<br />
-				Designer de PCB, modeladora 3D e Criadora de Projetos Eletrônicos.
-			</h1>
-		</div>
-	</header>
+ <style>
+        /* 1. Remove a barra lateral (header) apenas nesta página */
+        #header {
+            display: none !important;
+        }
+
+        /* 2. Ajusta o conteúdo para ocupar a tela inteira */
+        #main {
+            margin-left: 0 !important; /* Remove o recuo da lateral */
+            max-width: 1000px;         /* Mantém uma largura de leitura confortável */
+            margin: 0 auto !important; /* Centraliza o bloco na tela */
+            padding: 4em 2em !important;
+        }
+
+        /* 3. Títulos em Laranja */
+        h2 {
+            color: #ff914d !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            border-bottom: solid 3px #ff914d;
+            display: inline-block;
+            margin-bottom: 1.5em !important;
+        }
+
+        h3 {
+            color: #ff914d !important;
+            font-weight: 700 !important;
+        }
+
+        /* 4. Botões Padronizados (Branco com contorno Laranja) */
+        .button {
+            background-color: #ffffff !important;
+            color: #ff914d !important;
+            border: 2px solid #ff914d !important;
+            border-radius: 12px !important;
+            font-weight: bold !important;
+            text-transform: uppercase;
+            transition: all 0.3s ease !important;
+        }
+
+        .button:hover {
+            background-color: #ff914d !important;
+            color: #ffffff !important;
+        }
+
+        /* Ajuste para Mobile */
+        @media screen and (max-width: 736px) {
+            #main {
+                padding: 2em 1em !important;
+            }
+            .button {
+                width: 100% !important;
+                margin-bottom: 10px !important;
+            }
+        }
+    </style>
 
 	<div id="main">
 
