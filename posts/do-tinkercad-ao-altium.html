@@ -11,167 +11,91 @@
 
 <body class="is-preload">
 
-<style>
-
-		/* Títulos principais (H2) bem chamativos em laranja */
+	<style>
+    /* 1. Títulos em Laranja e Chamativos */
     h2 {
         color: #ff914d !important;
-        font-weight: 800 !important; /* Deixa a letra mais grossa */
-        text-transform: uppercase;   /* Deixa em letras maiúsculas */
-        letter-spacing: 2px;         /* Espaçamento entre letras elegante */F@med
-        border-bottom: solid 3px #ff914d; /* Linha de destaque abaixo do título */
+        font-weight: 800 !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: solid 3px #ff914d;
         display: inline-block;
         margin-bottom: 1.5em !important;
     }
 
-    /* Subtítulos e nomes de projetos (H3) em laranja */
     h3, h3 a {
         color: #ff914d !important;
         font-weight: 700 !important;
     }
 
-    /* Ajusta textos informativos e legendas que sobraram em cinza */
-    header p, .work-item p, #main p {
-        color: #555555; /* Um cinza mais escuro para leitura, ou mude para #ff914d se preferir tudo laranja */
+    /* 2. Fundo da Sidebar Laranja com Circuitos Suaves */
+    #header {
+        background-color: #ff914d !important;
+        /* Note o ../ para buscar a imagem na pasta correta */
+        background-image: url("../images/overlay.png"), url("../images/bg.png") !important;
+        background-size: auto, cover !important;
+        background-blend-mode: multiply; /* Deixa os circuitos mais discretos */
+        background-attachment: scroll !important;
     }
 
-		/* 1. Remove o overlay (camada de pontos/escuro) que fica por cima da imagem */
     #header::before {
         display: none !important;
-        content: none !important;
     }
 
-    /* 2. Remove a cor de fundo preta/escura que "vaza" pela imagem */
-    #header {
-        background-color: transparent !important;
-        background-image: url("images/overlay.png"), url("images/bg.png") !important; /* Mantém suas imagens */
-        background-size: auto, cover !important;
-    }
-
-    /* 3. Garante que as cores do texto não sumam se o fundo ficar muito claro */
-    #header h1, #header h1 strong, #header .icons a {
-        color: #ffffff !important;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important; /* Adiciona sombra no texto para leitura */
-    }
-
-.image-service {
-        display: flex !important;
-        justify-content: center !important; /* Centraliza o ícone horizontalmente */
-        margin-bottom: 1em !important;
-        width: 100%;
-    }
-
-    .image-service img {
-        height: auto !important;
+    /* 3. Ajuste da Logo (DESTRAVADA para Mobile e Desktop) */
+    .logo-container {
         display: block !important;
-        border-radius: 0 !important; /* Mantém o ícone quadrado/original */
+        border-bottom: none !important;
+        margin: 1em auto 1.5em auto !important;
+        width: 85% !important;
+        max-width: 280px !important;
     }
 
-  
-		/* Ajuste da Logo para não ficar gigante nem redonda */
-		.logo-container {
-			display: block !important;
-			border-bottom: none !important;
-			margin: 2em 0 3em 0 !important;
-			width: 100% !important;
-			max-width: 350px !important; /* Tamanho ideal para a barra lateral */
-		}
+    .logo-container img {
+        width: 100% !important;
+        max-width: none !important; /* Remove a trava de 4em do template */
+        height: auto !important;
+        border-radius: 0 !important;
+        display: block !important;
+    }
 
-		.logo-container img {
-			width: 100% !important;
-			height: auto !important;
-			border-radius: 0 !important; /* Garante que a logo NÃO fique redonda */
-			display: block !important;
-		}
-
-		/* Mantém o Avatar redondo como o original */
-		#header .image.avatar {
-			border-radius: 100% !important;
-			margin: 0 auto !important;
-		}
-
-		#header h1 strong {
-			font-size: 1.5em !important;
-			line-height: 1.2em;
-			display: block;
-			color: #ffffff !important;
-		}
-
-	
-
- /* Padronização de todos os botões do site */
-    input[type="submit"],
-    input[type="reset"],
-    input[type="button"],
+    /* 4. Botões Padronizados (Branco com contorno Laranja) */
     .button {
-        background-color: #ffffff !important; /* Fundo branco */
-        color: #ff914d !important;            /* Texto no seu laranja padrão */
-        border: 2px solid #ff914d !important; /* Contorno laranja sólido */
-        border-radius: 12px !important;       /* Cantos quadrados arredondados */
-        transition: all 0.3s ease !important; /* Suaviza a interação */
-        text-transform: uppercase;            /* Opcional: deixa o texto mais imponente */
+        background-color: #ffffff !important;
+        color: #ff914d !important;
+        border: 2px solid #ff914d !important;
+        border-radius: 12px !important;
         font-weight: bold !important;
+        transition: all 0.3s ease !important;
     }
 
-    /* Efeito ao passar o mouse (Hover) */
-    input[type="submit"]:hover,
-    input[type="reset"]:hover,
-    input[type="button"]:hover,
     .button:hover {
-        background-color: #ff914d !important; /* Inverte: fundo laranja */
-        color: #ffffff !important;            /* Texto branco */
-        border-color: #ff914d !important;
-        transform: translateY(-2px);          /* Leve pulinho para indicar clique */
+        background-color: #ff914d !important;
+        color: #ffffff !important;
     }
 
-		/* AJUSTES PARA CELULAR (Telas menores que 736px) */
+    /* 5. AJUSTES RESPONSIVOS (Celular) */
     @media screen and (max-width: 736px) {
-
-		/* 1. Aumenta a logo no celular para ser o destaque principal */
-        .logo-container {
-            max-width: 400px !important; /* Aumentado de 140px para 200px */
-            margin: 1em auto 1.5em auto !important;
-            display: block !important;
-        }
-
-        .logo-container img {
-            width: 100% !important;
-            height: auto !important;
-        }
-
-        /* 3. Ajusta o espaçamento do título para não grudar na logo */
-        #header h1 {
-            font-size: 1.2em !important;
-            margin-top: 0 !important;
-        }
-        
-        /* 1. Ajusta o título principal para não vazar */
         #one h2 {
-            font-size: 1.8em !important; /* Diminuído de 2.5em para caber no celular */
+            font-size: 1.5em !important;
             line-height: 1.2em !important;
-            display: block !important;
         }
 
-        /* 2. Ajusta os botões para o texto não sair de dentro */
+        .logo-container {
+            max-width: 220px !important; /* Tamanho bom para celular */
+        }
+
         .button {
-            font-size: 0.8em !important;    /* Diminui a letra dentro do botão */
-            padding: 0 1em !important;      /* Reduz o respiro interno lateral */
-            width: 100% !important;         /* Faz o botão ocupar a largura da tela */
-            white-space: normal !important; /* Permite que o texto quebre linha se for muito grande */
-            height: auto !important;        /* Ajusta a altura conforme o texto */
-            line-height: 1.5em !important;  /* Melhora o espaçamento entre linhas no botão */
-            padding-top: 0.8em !important;
-            padding-bottom: 0.8em !important;
-        }
-
-        /* 3. Garante que os títulos das seções (Portfólio, Serviços) também caibam */
-        h2 {
-            font-size: 1.4em !important;
-            letter-spacing: 1px !important;
+            width: 100% !important;
+            margin-bottom: 10px !important;
+            font-size: 0.8em !important;
+            white-space: normal !important;
+            height: auto !important;
+            padding: 0.8em !important;
         }
     }
-		
-	</style>
+</style>
+
 </head>
 
 <body class="is-preload">
