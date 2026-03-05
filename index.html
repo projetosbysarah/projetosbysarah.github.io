@@ -161,11 +161,29 @@
         color: #ffffff !important;
     }
 
-    /* Estiliza os botões dentro dessa seção para combinarem com o novo fundo */
-    #five .actions .button {
-        background-color: #ffffff !important;
-        color: #ff914d !important; /* Inverte as cores: fundo branco, texto laranja */
-        border: none !important;
+ /* Padronização de todos os botões do site */
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    .button {
+        background-color: #ffffff !important; /* Fundo branco */
+        color: #ff914d !important;            /* Texto no seu laranja padrão */
+        border: 2px solid #ff914d !important; /* Contorno laranja sólido */
+        border-radius: 12px !important;       /* Cantos quadrados arredondados */
+        transition: all 0.3s ease !important; /* Suaviza a interação */
+        text-transform: uppercase;            /* Opcional: deixa o texto mais imponente */
+        font-weight: bold !important;
+    }
+
+    /* Efeito ao passar o mouse (Hover) */
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    .button:hover {
+        background-color: #ff914d !important; /* Inverte: fundo laranja */
+        color: #ffffff !important;            /* Texto branco */
+        border-color: #ff914d !important;
+        transform: translateY(-2px);          /* Leve pulinho para indicar clique */
     }
 		
 	</style>
