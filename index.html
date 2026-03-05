@@ -146,6 +146,27 @@
 			padding: 1.5em;
 			margin-bottom: 2em;
 		}
+
+		/* Aplica o laranja #ff914d apenas no Blog */
+    #five article {
+        background-color: #ff914d !important; /* Seu laranja padrão */
+        border: none !important;              /* Remove a borda cinza antiga */
+        padding: 2em !important;              /* Espaçamento interno para o conteúdo respirar */
+        border-radius: 15px !important;       /* Deixa os cantos arredondados e modernos */
+    }
+
+    /* Ajusta o título e o texto do blog para ficarem brancos sobre o laranja */
+    #five article h3, 
+    #five article p {
+        color: #ffffff !important;
+    }
+
+    /* Estiliza os botões dentro dessa seção para combinarem com o novo fundo */
+    #five .actions .button {
+        background-color: #ffffff !important;
+        color: #ff914d !important; /* Inverte as cores: fundo branco, texto laranja */
+        border: none !important;
+    }
 		
 	</style>
 </head>
