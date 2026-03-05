@@ -73,15 +73,36 @@
                 <p><strong>A importância da simulação e da eletrônica analógica no design de PCBs.</strong></p>
             </header>
 
-            <p>Muitas vezes, quando pensamos em projetos eletrônicos hoje em dia, já pensamos logo em um ESP32 ou Arduino. Mas existe uma beleza na eletrônica analógica pura.</p>
+            <p>Muitas vezes, quando pensamos em projetos eletrônicos hoje em dia, já pensamos logo em um ESP32 ou Arduino. Mas existe uma beleza (e um desafio) incrível na <strong>eletrônica analógica pura</strong>.</p>
+			<p>Hoje vou mostrar o fluxo de desenvolvimento de um dos meus produtos favoritos: o <strong>Coração de LED</strong>. O desafio aqui era criar um circuito que "respirasse" (piscasse) sem usar nenhuma linha de programação.</p>
 
+			<hr />
+
+			<h3>1. A Simulação no Tinkercad 🛠️</h3>
+			<p>Antes de abrir o Altium ou gastar dinheiro com fabricação, o primeiro passo foi validar a teoria. Para isso, usei o <strong>Tinkercad</strong>.</p>
+			<p>O circuito foge do básico e utiliza uma dupla clássica da eletrônica: o <strong>LM556 (Dual Timer)</strong> e o <strong>74HC4017 (Contador Johnson)</strong>.</p>
+			<p>O funcionamento é uma dança sincronizada: o LM556 atua como um oscilador, gerando pulsos de clock (o "ritmo" da batida). Esse sinal é enviado para o 4017, que conta esses pulsos e ativa suas saídas uma a uma em sequência. O resultado é que os grupos de LEDs acendem em etapas, criando um efeito de movimento fluido e "preenchendo" o coração, muito mais sofisticado que um simples pisca-pisca.</p>
+			<span class="image fit"><img src="../images/fulls/simulacaoTinkercad.png" alt="Circuito no Tinkercad" /></span>
+			
+			<p><strong>Por que simular?</strong></p>
+			<ul>
+				<li><strong>Ajuste de Frequência:</strong> No Tinkercad, eu pude trocar os valores dos capacitores e resistores em tempo real para decidir qual velocidade da piscada ficava mais bonita.</li>
+				<li><strong>Sem Código:</strong> Como é um circuito analógico, não existe firmware. A lógica está na física dos componentes! Isso reduz custos e complexidade.</li>
+			</ul>
+
+			<h3>2. O Design Profissional no Altium Designer 🖥️</h3>
+			<p>Com a lógica validada, levei o projeto para o "mundo adulto": o <strong>Altium Designer</strong>. Aqui o objetivo não era mais testar se funcionava, mas sim fazer funcionar em um formato específico.</p>
+			
+			<p>O desafio foi rotear as trilhas para que os LEDs formassem o desenho perfeito de um coração, mantendo o circuito oscilador compacto e escondido.</p>
+
+			<span class="image fit"><img src="../images/fulls/AltiumLedCoracao.png" alt="PCB no Altium Designer" /></span>
+
+			<h3>3. O Resultado Final ✨</h3>
+			<p>O resultado é uma placa que ensina sobre carga e descarga de capacitores e chaves transistorizadas, tudo isso em um formato visualmente atraente. Sair da simulação simples do Tinkercad para uma PCB profissional no Altium mostra como ferramentas diferentes se complementam no fluxo de engenharia.</p>
             <span class="image fit"><img src="../images/fulls/fotocoracao.jpeg" alt="Coração de LEDs" /></span>
+			<hr />
 
-            <h3>1. A Simulação no Tinkercad 🛠️</h3>
-            <p>Antes de abrir o Altium, o primeiro passo foi validar a teoria usando o <strong>Tinkercad</strong>.</p>
-
-            <p>O circuito utiliza o <strong>LM556</strong> e o <strong>74HC4017</strong> para criar a animação sem precisar de uma única linha de código.</p>
-            
+            <p>Gostou desse fluxo de trabalho? Fique ligado nos próximos posts!
             
 
             <ul class="actions" style="display: flex; justify-content: space-between; margin-top: 3em;">
