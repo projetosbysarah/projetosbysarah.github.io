@@ -222,6 +222,23 @@
             margin: 0.5em auto 1.5em auto !important;
             display: block !important;
         }
+
+        .logo-container img {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* 2. Garante que o avatar (sua foto) não empurre a logo muito para baixo */
+        #header .image.avatar {
+            width: 5em !important; /* Diminui um pouco a foto para dar espaço à logo */
+            margin-bottom: 0.5em !important;
+        }
+
+        /* 3. Ajusta o espaçamento do título para não grudar na logo */
+        #header h1 {
+            font-size: 1.2em !important;
+            margin-top: 0 !important;
+        }
         
         /* 1. Ajusta o título principal para não vazar */
         #one h2 {
