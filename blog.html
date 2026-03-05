@@ -14,6 +14,246 @@
 			padding: 1.5em;
 			margin-bottom: 2em;
 		}
+
+		/* Títulos principais (H2) bem chamativos em laranja */
+    h2 {
+        color: #ff914d !important;
+        font-weight: 800 !important; /* Deixa a letra mais grossa */
+        text-transform: uppercase;   /* Deixa em letras maiúsculas */
+        letter-spacing: 2px;         /* Espaçamento entre letras elegante */
+        border-bottom: solid 3px #ff914d; /* Linha de destaque abaixo do título */
+        display: inline-block;
+        margin-bottom: 1.5em !important;
+    }
+
+    /* Subtítulos e nomes de projetos (H3) em laranja */
+    h3, h3 a {
+        color: #ff914d !important;
+        font-weight: 700 !important;
+    }
+
+    /* Ajusta textos informativos e legendas que sobraram em cinza */
+    header p, .work-item p, #main p {
+        color: #555555; /* Um cinza mais escuro para leitura, ou mude para #ff914d se preferir tudo laranja */
+    }
+
+    /* Destaque específico para o "Oi, meu nome é Sarah" */
+    #one h2 {
+        font-size: 2.5em !important;
+    }
+
+
+		/* 1. Remove o overlay (camada de pontos/escuro) que fica por cima da imagem */
+    #header::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* 2. Remove a cor de fundo preta/escura que "vaza" pela imagem */
+    #header {
+        background-color: transparent !important;
+        background-image: url("images/overlay.png"), url("images/bg.png") !important; /* Mantém suas imagens */
+        background-size: auto, cover !important;
+    }
+
+    /* 3. Garante que as cores do texto não sumam se o fundo ficar muito claro */
+    #header h1, #header h1 strong, #header .icons a {
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important; /* Adiciona sombra no texto para leitura */
+    }
+
+.image-service {
+        display: flex !important;
+        justify-content: center !important; /* Centraliza o ícone horizontalmente */
+        margin-bottom: 1em !important;
+        width: 100%;
+    }
+
+    .image-service img {
+        height: auto !important;
+        display: block !important;
+        border-radius: 0 !important; /* Mantém o ícone quadrado/original */
+    }
+		
+		/* Pinta o fundo do carrossel com o seu laranja padrão */
+    .horizontal-scroll-container {
+        background-color: #ff914d !important; 
+        padding: 10px 10px !important;
+        border-radius: 15px;
+        margin-bottom: 1em;
+    }
+
+    /* Ajusta os textos dos cards para branco para dar contraste com o laranja */
+    .horizontal-scroll-container .work-item h3, 
+    .horizontal-scroll-container .work-item p {
+        color: #ffffff !important;
+    }
+
+    /* Estiliza a barra de rolagem para combinar */
+    .horizontal-scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 10px;
+    }
+    
+    .horizontal-scroll-container::-webkit-scrollbar {
+        height: 8px;
+    }
+		/* --- CONFIGURAÇÕES DO HEADER / SIDEBAR --- */
+		#header .inner {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			text-align: center !important;
+		}
+
+		/* Ajuste da Logo para não ficar gigante nem redonda */
+		.logo-container {
+			display: block !important;
+			border-bottom: none !important;
+			margin: 2em 0 3em 0 !important;
+			width: 100% !important;
+			max-width: 350px !important; /* Tamanho ideal para a barra lateral */
+		}
+
+		.logo-container img {
+			width: 100% !important;
+			height: auto !important;
+			border-radius: 0 !important; /* Garante que a logo NÃO fique redonda */
+			display: block !important;
+		}
+
+		/* Mantém o Avatar redondo como o original */
+		#header .image.avatar {
+			border-radius: 100% !important;
+			margin: 0 auto !important;
+		}
+
+		#header h1 strong {
+			font-size: 1.5em !important;
+			line-height: 1.2em;
+			display: block;
+			color: #ffffff !important;
+		}
+
+		/* --- CARROSSEL (SCROLL HORIZONTAL) --- */
+		.horizontal-scroll-container {
+			display: flex;
+			overflow-x: auto;
+			overflow-y: hidden;
+			padding: 2em 0;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.horizontal-scroll-container .work-item {
+			flex: 0 0 300px;
+			margin-right: 1.5em;
+			width: 300px !important;
+			max-width: 300px !important;
+			float: none !important;
+			display: block !important;
+		}
+
+		/* Padroniza altura das imagens nos carrosséis */
+		.horizontal-scroll-container .work-item .image img {
+			height: 200px !important;
+			width: 100% !important;
+			object-fit: cover !important;
+		}
+
+		/* --- SEÇÃO DE SERVIÇOS (REMOVER ESCURECIMENTO) --- */
+		#three .work-item .image::before, 
+		#three .work-item .image::after {
+			display: none !important; /* Remove o fundo escuro e o 'View' */
+		}
+
+		/* --- ESTILOS GERAIS --- */
+		#footer .icons a {
+			color: #ffffff !important;
+			opacity: 1 !important;
+			border-bottom: none !important;
+		}
+
+		#five article {
+			border: 2px solid #555;
+			border-radius: 10px;
+			padding: 1.5em;
+			margin-bottom: 2em;
+		}
+
+		/* Aplica o laranja #ff914d apenas no Blog */
+    #five article {
+        background-color: #ff914d !important; /* Seu laranja padrão */
+        border: none !important;              /* Remove a borda cinza antiga */
+        padding: 2em !important;              /* Espaçamento interno para o conteúdo respirar */
+        border-radius: 15px !important;       /* Deixa os cantos arredondados e modernos */
+    }
+
+    /* Ajusta o título e o texto do blog para ficarem brancos sobre o laranja */
+    #five article h3, 
+    #five article p {
+        color: #ffffff !important;
+    }
+
+ /* Padronização de todos os botões do site */
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    .button {
+        background-color: #ffffff !important; /* Fundo branco */
+        color: #ff914d !important;            /* Texto no seu laranja padrão */
+        border: 2px solid #ff914d !important; /* Contorno laranja sólido */
+        border-radius: 12px !important;       /* Cantos quadrados arredondados */
+        transition: all 0.3s ease !important; /* Suaviza a interação */
+        text-transform: uppercase;            /* Opcional: deixa o texto mais imponente */
+        font-weight: bold !important;
+    }
+
+    /* Efeito ao passar o mouse (Hover) */
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    .button:hover {
+        background-color: #ff914d !important; /* Inverte: fundo laranja */
+        color: #ffffff !important;            /* Texto branco */
+        border-color: #ff914d !important;
+        transform: translateY(-2px);          /* Leve pulinho para indicar clique */
+    }
+
+		/* AJUSTES PARA CELULAR (Telas menores que 736px) */
+    @media screen and (max-width: 736px) {
+        
+        /* 1. Ajusta o título principal para não vazar */
+        #one h2 {
+            font-size: 1.8em !important; /* Diminuído de 2.5em para caber no celular */
+            line-height: 1.2em !important;
+            display: block !important;
+        }
+
+        /* 2. Ajusta os botões para o texto não sair de dentro */
+        .button {
+            font-size: 0.8em !important;    /* Diminui a letra dentro do botão */
+            padding: 0 1em !important;      /* Reduz o respiro interno lateral */
+            width: 100% !important;         /* Faz o botão ocupar a largura da tela */
+            white-space: normal !important; /* Permite que o texto quebre linha se for muito grande */
+            height: auto !important;        /* Ajusta a altura conforme o texto */
+            line-height: 1.5em !important;  /* Melhora o espaçamento entre linhas no botão */
+            padding-top: 0.8em !important;
+            padding-bottom: 0.8em !important;
+        }
+
+        /* 3. Garante que os títulos das seções (Portfólio, Serviços) também caibam */
+        h2 {
+            font-size: 1.4em !important;
+            letter-spacing: 1px !important;
+        }
+
+        /* 4. Ajusta a margem da logo para não empurrar tudo no mobile */
+        .logo-container {
+            max-width: 140px !important;
+            margin-top: 0.5em !important;
+        }
+    }
+		
 	</style>
 	
 </head>
