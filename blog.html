@@ -13,7 +13,7 @@
         color: #ff914d !important;
         font-weight: 800 !important; /* Deixa a letra mais grossa */
         text-transform: uppercase;   /* Deixa em letras maiúsculas */
-        letter-spacing: 2px;         /* Espaçamento entre letras elegante */
+        letter-spacing: 2px;         /* Espaçamento entre letras elegante */F@med
         border-bottom: solid 3px #ff914d; /* Linha de destaque abaixo do título */
         display: inline-block;
         margin-bottom: 1.5em !important;
@@ -173,36 +173,18 @@
 			margin-bottom: 2em;
 		}
 
-		/* Aplica o laranja #ff914d em TODOS os artigos de postagem */
-    article.post, 
-    article.box,
-    section article {
+		/* Aplica o laranja #ff914d apenas no Blog */
+    #five article {
         background-color: #ff914d !important; /* Seu laranja padrão */
-        border: none !important;
-        padding: 2em !important;
-        border-radius: 15px !important;
-        margin-bottom: 2em !important;
-        display: block;
-        overflow: hidden;
+        border: none !important;              /* Remove a borda cinza antiga */
+        padding: 2em !important;              /* Espaçamento interno para o conteúdo respirar */
+        border-radius: 15px !important;       /* Deixa os cantos arredondados e modernos */
     }
 
-    /* Garante que os textos dentro desses quadrados fiquem brancos */
-    article h3, 
-    article h3 a,
-    article p,
-    article ul li {
+    /* Ajusta o título e o texto do blog para ficarem brancos sobre o laranja */
+    #five article h3, 
+    #five article p {
         color: #ffffff !important;
-    }
-
-    /* Ajuste para as imagens dentro dos quadrados não ficarem estranhas */
-    article .image.fit {
-        margin: -2em -2em 1.5em -2em !important; /* Faz a imagem encostar no topo do quadrado */
-        width: calc(100% + 4em) !important;
-        max-width: none !important;
-    }
-
-    article .image.fit img {
-        border-radius: 15px 15px 0 0 !important; /* Arredonda só o topo da foto */
     }
 
  /* Padronização de todos os botões do site */
@@ -232,6 +214,24 @@
 
 		/* AJUSTES PARA CELULAR (Telas menores que 736px) */
     @media screen and (max-width: 736px) {
+
+		/* 1. Aumenta a logo no celular para ser o destaque principal */
+        .logo-container {
+            max-width: 400px !important; /* Aumentado de 140px para 200px */
+            margin: 1em auto 1.5em auto !important;
+            display: block !important;
+        }
+
+        .logo-container img {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* 3. Ajusta o espaçamento do título para não grudar na logo */
+        #header h1 {
+            font-size: 1.2em !important;
+            margin-top: 0 !important;
+        }
         
         /* 1. Ajusta o título principal para não vazar */
         #one h2 {
@@ -257,17 +257,11 @@
             font-size: 1.4em !important;
             letter-spacing: 1px !important;
         }
-
-        /* 4. Ajusta a margem da logo para não empurrar tudo no mobile */
-        .logo-container {
-            max-width: 140px !important;
-            margin-top: 0.5em !important;
-        }
     }
 		
 	</style>
-	
 </head>
+
 <body class="is-preload">
 
 	<header id="header">
@@ -282,6 +276,7 @@
 			Designer de PCB & Firmware Developer.</h1>
 		</div>
 	</header>
+
 
 	<div id="main">
 
