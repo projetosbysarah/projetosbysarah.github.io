@@ -9,6 +9,33 @@
 
 	<style>
 
+		/* Títulos principais (H2) bem chamativos em laranja */
+    h2 {
+        color: #ff914d !important;
+        font-weight: 800 !important; /* Deixa a letra mais grossa */
+        text-transform: uppercase;   /* Deixa em letras maiúsculas */
+        letter-spacing: 2px;         /* Espaçamento entre letras elegante */
+        border-bottom: solid 3px #ff914d; /* Linha de destaque abaixo do título */
+        display: inline-block;
+        margin-bottom: 1.5em !important;
+    }
+
+    /* Subtítulos e nomes de projetos (H3) em laranja */
+    h3, h3 a {
+        color: #ff914d !important;
+        font-weight: 700 !important;
+    }
+
+    /* Ajusta textos informativos e legendas que sobraram em cinza */
+    header p, .work-item p, #main p {
+        color: #555555; /* Um cinza mais escuro para leitura, ou mude para #ff914d se preferir tudo laranja */
+    }
+
+    /* Destaque específico para o "Oi, meu nome é Sarah" */
+    #one h2 {
+        font-size: 2.5em !important;
+    }
+
 
 		/* 1. Remove o overlay (camada de pontos/escuro) que fica por cima da imagem */
     #header::before {
