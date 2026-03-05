@@ -212,6 +212,41 @@
         border-color: #ff914d !important;
         transform: translateY(-2px);          /* Leve pulinho para indicar clique */
     }
+
+		/* AJUSTES PARA CELULAR (Telas menores que 736px) */
+    @media screen and (max-width: 736px) {
+        
+        /* 1. Ajusta o título principal para não vazar */
+        #one h2 {
+            font-size: 1.8em !important; /* Diminuído de 2.5em para caber no celular */
+            line-height: 1.2em !important;
+            display: block !important;
+        }
+
+        /* 2. Ajusta os botões para o texto não sair de dentro */
+        .button {
+            font-size: 0.8em !important;    /* Diminui a letra dentro do botão */
+            padding: 0 1em !important;      /* Reduz o respiro interno lateral */
+            width: 100% !important;         /* Faz o botão ocupar a largura da tela */
+            white-space: normal !important; /* Permite que o texto quebre linha se for muito grande */
+            height: auto !important;        /* Ajusta a altura conforme o texto */
+            line-height: 1.5em !important;  /* Melhora o espaçamento entre linhas no botão */
+            padding-top: 0.8em !important;
+            padding-bottom: 0.8em !important;
+        }
+
+        /* 3. Garante que os títulos das seções (Portfólio, Serviços) também caibam */
+        h2 {
+            font-size: 1.4em !important;
+            letter-spacing: 1px !important;
+        }
+
+        /* 4. Ajusta a margem da logo para não empurrar tudo no mobile */
+        .logo-container {
+            max-width: 140px !important;
+            margin-top: 0.5em !important;
+        }
+    }
 		
 	</style>
 </head>
