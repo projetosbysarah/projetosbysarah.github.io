@@ -9,6 +9,26 @@
 
 	<style>
 
+
+		/* 1. Remove o overlay (camada de pontos/escuro) que fica por cima da imagem */
+    #header::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* 2. Remove a cor de fundo preta/escura que "vaza" pela imagem */
+    #header {
+        background-color: transparent !important;
+        background-image: url("images/overlay.png"), url("images/bg.png") !important; /* Mantém suas imagens */
+        background-size: auto, cover !important;
+    }
+
+    /* 3. Garante que as cores do texto não sumam se o fundo ficar muito claro */
+    #header h1, #header h1 strong, #header .icons a {
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important; /* Adiciona sombra no texto para leitura */
+    }
+
 .image-service {
         display: flex !important;
         justify-content: center !important; /* Centraliza o ícone horizontalmente */
