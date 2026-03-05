@@ -57,15 +57,24 @@
         font-weight: 700 !important;
     }
 
-    /* 2. Fundo da Sidebar Laranja com Circuitos Suaves */
-    #header {
-        background-color: #ff914d !important;
-        /* Note o ../ para buscar a imagem na pasta correta */
-        background-image: url("../images/overlay.png"), url("../images/bg.png") !important;
-        background-size: auto, cover !important;
-        background-blend-mode: multiply; /* Deixa os circuitos mais discretos */
-        background-attachment: scroll !important;
-    }
+#header {
+    /* 1. Força o fundo a ser sólido e sem gradientes estranhos */
+    background-color: #ff914d !important;
+    background-image: url("../images/overlay.png"), url("../images/bg.png") !important;
+    background-size: auto, cover !important;
+    background-position: center !important;
+    
+    /* 2. Remove filtros que mudam a cor original */
+    filter: none !important;
+    background-blend-mode: normal !important;
+
+    /* 3. Centralização Total do Conteúdo */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
 
     #header::before {
         display: none !important;
