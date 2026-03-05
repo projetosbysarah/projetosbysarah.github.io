@@ -12,6 +12,33 @@
 <body class="is-preload">
 
 	<style>
+
+/* Centraliza todo o conteúdo da barra lateral */
+#header .inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+/* Força os ícones das redes sociais a ficarem brancos e centralizados */
+#header .icons {
+    display: flex !important;
+    justify-content: center !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 1em 0 0 0 !important;
+}
+
+#header .icons li a {
+    color: #ffffff !important; /* Ícones brancos */
+    border: none !important;
+}
+
+#header .icons li a:hover {
+    color: #ff914d !important; /* Laranja ao passar o mouse */
+}
+		
     /* 1. Títulos em Laranja e Chamativos */
     h2 {
         color: #ff914d !important;
