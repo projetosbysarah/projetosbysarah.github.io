@@ -10,7 +10,6 @@
         /* --- ESTILOS DO HEADER (SIDEBAR) --- */
         #header {
             background-color: transparent !important;
-            /* Ajustado com ../ para as imagens de fundo */
             background-image: url("../images/overlay.png"), url("../images/bg.png") !important;
             background-size: auto, cover !important;
             background-attachment: scroll !important;
@@ -21,6 +20,7 @@
             content: none !important;
         }
 
+        /* Centralização total da sidebar */
         #header .inner {
             display: flex !important;
             flex-direction: column !important;
@@ -28,9 +28,23 @@
             text-align: center !important;
         }
 
+        /* Ícones sociais brancos e centralizados */
+        #header .icons {
+            display: flex !important;
+            justify-content: center !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 1.5em 0 0 0 !important;
+        }
+
+        #header .icons li {
+            margin: 0 0.5em !important;
+        }
+
         #header .icons li a {
             color: #ffffff !important;
             border: none !important;
+            font-size: 1.25em !important;
         }
 
         #header .icons li a:hover {
@@ -53,7 +67,7 @@
 
         .logo-container img {
             width: 100% !important;
-            max-width: none !important;
+            max-width: none !important; /* Destrava o tamanho no celular */
             height: auto !important;
             border-radius: 0 !important;
             display: block !important;
@@ -94,6 +108,7 @@
             transition: all 0.3s ease !important;
             font-weight: bold !important;
             text-transform: uppercase;
+            padding: 0 2em !important;
         }
 
         .button:hover {
@@ -108,8 +123,8 @@
                 max-width: 220px !important;
                 margin: 1em auto !important;
             }
-            #header h1 { font-size: 1.2em !important; }
-            h2 { font-size: 1.4em !important; }
+            #header h1 { font-size: 1.1em !important; }
+            h2 { font-size: 1.4em !important; display: block !important; }
             .button { width: 100% !important; margin-bottom: 10px !important; }
         }
     </style>
@@ -141,43 +156,41 @@
     <div id="main">
         <section id="one">
             <header class="major">
+                <h2>Do Tinkercad ao Altium: Criando um Coração de LED Pulsante (Sem Código!)</h2>
+                <p><strong>A importância da simulação e da eletrônica analógica no design de PCBs.</strong></p>
+            </header>
 
-				<section id="one">
-			<header class="major">
-				<h2>Do Tinkercad ao Altium: Criando um Coração de LED Pulsante (Sem Código!)</h2>
-				<p><strong>A importância da simulação e da eletrônica analógica no design de PCBs.</strong></p>
-			</header>
+            <p>Muitas vezes, quando pensamos em projetos eletrônicos hoje em dia, já pensamos logo em um ESP32 ou Arduino. Mas existe uma beleza incrível na <strong>eletrônica analógica pura</strong>.</p>
+            <p>Hoje vou mostrar o fluxo de desenvolvimento de um dos meus produtos favoritos: o <strong>Coração de LED</strong>. O desafio aqui era criar um circuito que "respirasse" (piscasse) sem usar nenhuma linha de programação.</p>
 
-			<p>Muitas vezes, quando pensamos em projetos eletrônicos hoje em dia, já pensamos logo em um ESP32 ou Arduino. Mas existe uma beleza (e um desafio) incrível na <strong>eletrônica analógica pura</strong>.</p>
-			<p>Hoje vou mostrar o fluxo de desenvolvimento de um dos meus produtos favoritos: o <strong>Coração de LED</strong>. O desafio aqui era criar um circuito que "respirasse" (piscasse) sem usar nenhuma linha de programação.</p>
+            <hr />
 
-			<hr />
+            <h3>1. A Simulação no Tinkercad 🛠️</h3>
+            <p>Antes de abrir o Altium ou gastar dinheiro com fabricação, o primeiro passo foi validar a teoria. Para isso, usei o <strong>Tinkercad</strong>.</p>
+            
+            
 
-			<h3>1. A Simulação no Tinkercad 🛠️</h3>
-			<p>Antes de abrir o Altium ou gastar dinheiro com fabricação, o primeiro passo foi validar a teoria. Para isso, usei o <strong>Tinkercad</strong>.</p>
-			<p>O circuito foge do básico e utiliza uma dupla clássica da eletrônica: o <strong>LM556 (Dual Timer)</strong> e o <strong>74HC4017 (Contador Johnson)</strong>.</p>
-			<p>O funcionamento é uma dança sincronizada: o LM556 atua como um oscilador, gerando pulsos de clock (o "ritmo" da batida). Esse sinal é enviado para o 4017, que conta esses pulsos e ativa suas saídas uma a uma em sequência. O resultado é que os grupos de LEDs acendem em etapas, criando um efeito de movimento fluido e "preenchendo" o coração, muito mais sofisticado que um simples pisca-pisca.</p>
-			<span class="image fit"><img src="../images/fulls/simulacaoTinkercad.png" alt="Circuito no Tinkercad" /></span>
-			
-			<p><strong>Por que simular?</strong></p>
-			<ul>
-				<li><strong>Ajuste de Frequência:</strong> No Tinkercad, eu pude trocar os valores dos capacitores e resistores em tempo real para decidir qual velocidade da piscada ficava mais bonita.</li>
-				<li><strong>Sem Código:</strong> Como é um circuito analógico, não existe firmware. A lógica está na física dos componentes! Isso reduz custos e complexidade.</li>
-			</ul>
+            <p>O circuito utiliza uma dupla clássica da eletrônica: o <strong>LM556 (Dual Timer)</strong> e o <strong>74HC4017 (Contador Johnson)</strong>. O funcionamento é uma dança sincronizada: o LM556 gera os pulsos de ritmo e o 4017 ativa os grupos de LEDs em sequência.</p>
+            
+            <span class="image fit"><img src="../images/fulls/simulacaoTinkercad.png" alt="Circuito no Tinkercad" /></span>
+            
+            <p><strong>Por que simular?</strong></p>
+            <ul>
+                <li><strong>Ajuste de Frequência:</strong> No Tinkercad, pude trocar componentes em tempo real para decidir a velocidade da batida.</li>
+                <li><strong>Sem Código:</strong> A lógica está na física dos componentes, reduzindo custos.</li>
+            </ul>
 
-			<h3>2. O Design Profissional no Altium Designer 🖥️</h3>
-			<p>Com a lógica validada, levei o projeto para o "mundo adulto": o <strong>Altium Designer</strong>. Aqui o objetivo não era mais testar se funcionava, mas sim fazer funcionar em um formato específico.</p>
-			
-			<p>O desafio foi rotear as trilhas para que os LEDs formassem o desenho perfeito de um coração, mantendo o circuito oscilador compacto e escondido.</p>
+            <h3>2. O Design Profissional no Altium Designer 🖥️</h3>
+            <p>Com a lógica validada, o desafio no <strong>Altium</strong> foi rotear as trilhas para que os LEDs formassem o desenho perfeito de um coração, mantendo o circuito compacto.</p>
 
-			<span class="image fit"><img src="../images/fulls/AltiumLedCoracao.png" alt="PCB no Altium Designer" /></span>
+            <span class="image fit"><img src="../images/fulls/AltiumLedCoracao.png" alt="PCB no Altium Designer" /></span>
 
-			<h3>3. O Resultado Final ✨</h3>
-			<p>O resultado é uma placa que ensina sobre carga e descarga de capacitores e chaves transistorizadas, tudo isso em um formato visualmente atraente. Sair da simulação simples do Tinkercad para uma PCB profissional no Altium mostra como ferramentas diferentes se complementam no fluxo de engenharia.</p>
+            <h3>3. O Resultado Final ✨</h3>
+            <p>O resultado é uma placa que ensina sobre eletrônica básica em um formato visualmente atraente.</p>
+            
             <span class="image fit"><img src="../images/fulls/fotocoracao.jpeg" alt="Coração de LEDs" /></span>
-			<hr />
-
-			<p>Gostou desse fluxo de trabalho? Se você quer aprender mais sobre simulação ou design de PCB, fique ligado nos próximos posts!</p>
+            
+            <hr />
 
             <ul class="actions" style="display: flex; justify-content: space-between; margin-top: 3em;">
                 <li><a href="../blog.html" class="button">Voltar ao Blog</a></li>
