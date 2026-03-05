@@ -1,171 +1,148 @@
 <!DOCTYPE HTML>
 <html>
-
-	
-
 <head>
-	<title>Do Tinkercad ao Altium: Coração de LED - Projetos by Sarah</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	
-	<link rel="stylesheet" href="../assets/css/main.css" />
+    <title>Do Tinkercad ao Altium: Coração de LED - Projetos by Sarah</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <style>
+        /* --- ESTILOS DO HEADER (SIDEBAR) --- */
+        #header {
+            background-color: transparent !important;
+            /* Ajustado com ../ para as imagens de fundo */
+            background-image: url("../images/overlay.png"), url("../images/bg.png") !important;
+            background-size: auto, cover !important;
+            background-attachment: scroll !important;
+        }
+
+        #header::before {
+            display: none !important;
+            content: none !important;
+        }
+
+        #header .inner {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        #header .icons li a {
+            color: #ffffff !important;
+            border: none !important;
+        }
+
+        #header .icons li a:hover {
+            color: #ff914d !important;
+        }
+
+        #header h1, #header h1 strong {
+            color: #ffffff !important;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Logo e Avatar */
+        .logo-container {
+            display: block !important;
+            border-bottom: none !important;
+            margin: 1em 0 1.5em 0 !important;
+            width: 100% !important;
+            max-width: 280px !important;
+        }
+
+        .logo-container img {
+            width: 100% !important;
+            max-width: none !important;
+            height: auto !important;
+            border-radius: 0 !important;
+            display: block !important;
+        }
+
+        #header .image.avatar {
+            border-radius: 100% !important;
+            margin: 0 auto !important;
+            width: 6em !important;
+        }
+
+        /* --- TÍTULOS E TEXTOS --- */
+        h2 {
+            color: #ff914d !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: solid 3px #ff914d;
+            display: inline-block;
+            margin-bottom: 1.5em !important;
+        }
+
+        h3, h3 a {
+            color: #ff914d !important;
+            font-weight: 700 !important;
+        }
+
+        header p, #main p {
+            color: #555555;
+        }
+
+        /* --- BOTÕES PADRONIZADOS --- */
+        .button {
+            background-color: #ffffff !important;
+            color: #ff914d !important;
+            border: 2px solid #ff914d !important;
+            border-radius: 12px !important;
+            transition: all 0.3s ease !important;
+            font-weight: bold !important;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background-color: #ff914d !important;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+
+        /* --- AJUSTES RESPONSIVOS (CELULAR) --- */
+        @media screen and (max-width: 736px) {
+            .logo-container {
+                max-width: 220px !important;
+                margin: 1em auto !important;
+            }
+            #header h1 { font-size: 1.2em !important; }
+            h2 { font-size: 1.4em !important; }
+            .button { width: 100% !important; margin-bottom: 10px !important; }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
 
-	<style>
+    <header id="header">
+        <div class="inner">
+            <a href="../index.html" class="image avatar"><img src="../images/avatar.jpg" alt="Sarah" /></a>
+            
+            <a href="../index.html" class="logo-container">
+                <img src="../images/Logo Sarah.png" alt="Logo Projetos by Sarah" />
+            </a>
 
-/* Centraliza todo o conteúdo da barra lateral */
-#header .inner {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-}
-
-/* Força os ícones das redes sociais a ficarem brancos e centralizados */
-#header .icons {
-    display: flex !important;
-    justify-content: center !important;
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 1em 0 0 0 !important;
-}
-
-#header .icons li a {
-    color: #ffffff !important; /* Ícones brancos */
-    border: none !important;
-}
-
-#header .icons li a:hover {
-    color: #ff914d !important; /* Laranja ao passar o mouse */
-}
-		
-    /* 1. Títulos em Laranja e Chamativos */
-    h2 {
-        color: #ff914d !important;
-        font-weight: 800 !important;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-bottom: solid 3px #ff914d;
-        display: inline-block;
-        margin-bottom: 1.5em !important;
-    }
-
-    h3, h3 a {
-        color: #ff914d !important;
-        font-weight: 700 !important;
-    }
-
-#header {
-    /* 1. Força o fundo a ser sólido e sem gradientes estranhos */
-    background-color: #ff914d !important;
-    background-image: url("../images/overlay.png"), url("../images/bg.png") !important;
-    background-size: auto, cover !important;
-    background-position: center !important;
-    
-    /* 2. Remove filtros que mudam a cor original */
-    filter: none !important;
-    background-blend-mode: normal !important;
-
-    /* 3. Centralização Total do Conteúdo */
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-}
-
-    #header::before {
-        display: none !important;
-    }
-
-    /* 3. Ajuste da Logo (DESTRAVADA para Mobile e Desktop) */
-    .logo-container {
-        display: block !important;
-        border-bottom: none !important;
-        margin: 1em auto 1.5em auto !important;
-        width: 85% !important;
-        max-width: 280px !important;
-    }
-
-    .logo-container img {
-        width: 100% !important;
-        max-width: none !important; /* Remove a trava de 4em do template */
-        height: auto !important;
-        border-radius: 0 !important;
-        display: block !important;
-    }
-
-    /* 4. Botões Padronizados (Branco com contorno Laranja) */
-    .button {
-        background-color: #ffffff !important;
-        color: #ff914d !important;
-        border: 2px solid #ff914d !important;
-        border-radius: 12px !important;
-        font-weight: bold !important;
-        transition: all 0.3s ease !important;
-    }
-
-    .button:hover {
-        background-color: #ff914d !important;
-        color: #ffffff !important;
-    }
-
-    /* 5. AJUSTES RESPONSIVOS (Celular) */
-    @media screen and (max-width: 736px) {
-        #one h2 {
-            font-size: 1.5em !important;
-            line-height: 1.2em !important;
-        }
-
-        .logo-container {
-            max-width: 220px !important; /* Tamanho bom para celular */
-        }
-
-        .button {
-            width: 100% !important;
-            margin-bottom: 10px !important;
-            font-size: 0.8em !important;
-            white-space: normal !important;
-            height: auto !important;
-            padding: 0.8em !important;
-        }
-    }
-</style>
-
-	#header {
-        background-color: #ff914d !important;
-        background-image: url("../images/overlay.png"), url("../images/bg.png") !important;
-        background-size: auto, cover !important;
-        background-blend-mode: soft-light !important; 
-        filter: brightness(0.9) contrast(1.1) !important;
-        background-attachment: scroll !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-	<body class="is-preload">
-
-	<header id="header">
-		<div class="inner">
-			<a href="../index.html" class="image avatar"><img src="../images/avatar.jpg" alt="Projetos by Sarah" /></a>
-			
-			 <a href="../index.html" class="logo-container">
-				  <img src="../images/Logo Sarah.png" alt="Logo Projetos by Sarah" />
-				  </a>
-
-				 <h1><strong>Engenheira Eletrônica</strong><br /> 
+            <h1><strong>Engenheira Eletrônica</strong><br />
             Designer de PCB & Firmware Developer.</h1>
-			
-		</div>
-	</header>
 
-	<div id="main">
+            <ul class="icons">
+                <li><a href="https://wa.me/+5543991698188" target="_blank" class="icon brands fa-whatsapp"></a></li>
+                <li><a href="https://github.com/projetosbysarah" target="_blank" class="icon brands fa-github"></a></li>
+                <li><a href="https://br.linkedin.com/in/sarah-de-almeida-ramos-b6703b221" target="_blank" class="icon brands fa-linkedin"></a></li>
+                <li><a href="https://www.instagram.com/sarah.ramos18" target="_blank" class="icon brands fa-instagram"></a></li>
+                <li><a href="https://www.tiktok.com/@sarah.ramos18" target="_blank" class="icon brands fa-tiktok"></a></li>
+            </ul>
+        </div>
+    </header>
 
-		<section id="one">
+    <div id="main">
+        <section id="one">
+            <header class="major">
+
+				<section id="one">
 			<header class="major">
 				<h2>Do Tinkercad ao Altium: Criando um Coração de LED Pulsante (Sem Código!)</h2>
 				<p><strong>A importância da simulação e da eletrônica analógica no design de PCBs.</strong></p>
@@ -202,38 +179,19 @@
 
 			<p>Gostou desse fluxo de trabalho? Se você quer aprender mais sobre simulação ou design de PCB, fique ligado nos próximos posts!</p>
 
-			<ul class="actions" style="display: flex; justify-content: space-between;">
-				<li><a href="../blog.html" class="button">Voltar ao Blog</a></li>
-				<li><a href="../index.html" class="button">Voltar ao Menu Principal</a></li>
-			</ul>
+            <ul class="actions" style="display: flex; justify-content: space-between; margin-top: 3em;">
+                <li><a href="../blog.html" class="button">Voltar ao Blog</a></li>
+                <li><a href="../index.html" class="button">Menu Principal</a></li>
+            </ul>
+        </section>
+    </div>
 
-		</section>
-
-	</div>
-
-	<footer id="footer">
-		<div class="inner">
-			<ul class="icons">
-				<li><a href="https://wa.me/+5543991698188" target="_blank" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
-				<li><a href="https://github.com/projetosbysarah" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-				<li><a href="https://br.linkedin.com/in/sarah-de-almeida-ramos-b6703b221" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				<li><a href="https://www.instagram.com/sarah.ramos18" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="https://www.tiktok.com/@sarah.ramos18?_r=1&_t=ZS-91K7nBwhfma" target="_blank" class="icon brands fa-tiktok"><span class="label">TikTok</span></a></li>
-			</ul>
-			<ul class="copyright" style="margin-top: 2em;">
-				<li>&copy; 2025 Projetos by Sarah</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
-	</footer>
-
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.poptrox.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.poptrox.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
-
 </html>
