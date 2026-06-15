@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Fonte de Bancada ATX com Buck-Boost Ajustável - Projetos by Sarah</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <style>
+        /* Remove a barra lateral apenas nesta página */
+        #header {
+            display: none !important;
+        }
+
+        /* Ajusta o conteúdo para ocupar a tela inteira com leitura confortável */
+        #main {
+            margin-left: 0 !important;
+            max-width: 1000px;
+            margin: 0 auto !important;
+            padding: 4em 2em !important;
+        }
+
+        /* Títulos em Laranja */
+        h2 {
+            color: #ff914d !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: solid 3px #ff914d;
+            display: inline-block;
+            margin-bottom: 1.5em !important;
+        }
+
+        h3 {
+            color: #ff914d !important;
+            font-weight: 700 !important;
+            margin-top: 2em !important;
+        }
+
+        ul {
+            margin-bottom: 1.5em;
+        }
+
+        strong {
+            color: #ff914d !important;
+        }
+
+        /* Estilização da caixa de destaque para o link 3D */
+        .box-download {
+            background-color: #f7f7f7;
+            border-left: 5px solid #ff914d;
+            padding: 1.5em;
+            margin: 2em 0;
+            border-radius: 4px;
+        }
+
+        /* Botões de navegação no final */
+        .button {
+            background-color: #ffffff !important;
+            color: #ff914d !important;
+            border: 2px solid #ff914d !important;
+            border-radius: 12px !important;
+            font-weight: bold !important;
+            text-transform: uppercase;
+            transition: all 0.3s ease !important;
+        }
+
+        .button:hover {
+            background-color: #ff914d !important;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: 736px) {
+            #main { padding: 2em 1em !important; }
+            h2 { font-size: 1.4em !important; display: block !important; }
+            .button { width: 100% !important; margin-bottom: 10px !important; }
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <div id="main">
+        <section id="one">
+            <header class="major">
+                <h2>Upgrade de Bancada: Montando uma Fonte de Alimentação ATX com Buck-Boost Ajustável</h2>
+                <p><strong>Como transformar uma fonte de PC antiga em uma ferramenta de P&D potente, com tensões fixas e saída variável de 0 a 30V.</strong></p>
+            </header>
+
+            <p>Todo desenvolvedor de hardware sabe que uma fonte de alimentação confiável e flexível é o coração de qualquer bancada de eletrônica. Quando estamos testando um firmware ou validando uma PCB nova, precisamos de linhas de alimentação estáveis e de fácil acesso. Pensando nisso, decidi montar a minha própria **Fonte de Bancada Reaproveitando uma Fonte ATX de Computador**, mas com um grande diferencial: uma saída totalmente regulável de alta capacidade técnica.</p>
+
+            <span class="image fit">
+                <img src="../images/fulls/fonte.jpg" alt="Fonte de Bancada ATX Pronta" />
+            </span>
+            <h3>As Tensões Fixas: O Feijão com Arroz dos Meus Projetos</h3>
+            <p>Uma das maiores vantagens de reaproveitar uma fonte ATX são as linhas de tensão nativas que ela oferece. Elas cobrem exatamente as tensões que eu mais utilizo no meu dia a dia de projetos de sistemas embarcados:</p>
+            
+            <ul>
+                <li><strong>3.3V:</strong> A tensão padrão ouro para alimentar os microcontroladores modernos que uso direto em bancada, como o ESP32 e chips ARM.</li>
+                <li><strong>5V:</strong> Essencial para alimentar displays inteligentes (Nextion/DWIN), sensores analógicos, relés e barramentos de comunicação TTL.</li>
+                <li><strong>12V:</strong> A linha de força perfeita para drivers de motores, ventoinhas de resfriamento e amplificadores de áudio de maior potência.</li>
+            </ul>
+
+            <h3>O Upgrade: Integração com o Módulo CNC Buck-Boost ZK-4KX</h3>
+            <p>Embora as tensões fixas resolvam 80% dos problemas, no desenvolvimento do zero (P&D) frequentemente precisamos de valores específicos como 3.7V para simular baterias de LiPo, ou 24V para circuitos industriais. Para resolver isso, integrei ao projeto um módulo **CNC Buck-Boost ZK-4KX** alimentado diretamente pela linha de 12V da ATX.</p>
+
+            <span class="image fit">
+                <img src="../images/fulls/BuckBoost.jpg" alt="Módulo Buck-Boost ZK-4KX" />
+            </span>
+            <p>Esse pequeno módulo é uma ferramenta fantástica de controle de potência. Ele me permite ajustar a saída de **0 a 30V com corrente regulável de até 4A (limite de 35W)**. A interface digital me dá a precisão necessária para limitar a corrente máxima do circuito, o que salva muitas PCBs de sofrerem um curto-circuito fatal durante o primeiro power-up de teste.</p>
+
+            <h3>Gabinete e Modelagem 3D</h3>
+            <p>Para deixar a montagem limpa e profissional na bancada, utilizei um case que integra perfeitamente os bornes banana de saída, a chave geral e o módulo ZK-4KX na carcaça da própria fonte. Se você quiser montar uma igual para o seu laboratório, o modelo do projeto mecânico está disponível para download.</p>
+
+            <div class="box-download">
+                <h4>📦 Download do Projeto Mecânico (Case 3D)</h4>
+                <p>Você pode baixar os arquivos STL para impressão 3D diretamente no Printables através do link oficial:</p>
+                <a href="https://www.printables.com/model/182204-benchtop-atx-power-supply" target="_blank" class="button" style="margin-top: 1em; display: inline-block;">Ver Projeto no Printables</a>
+            </div>
+
+            <p>Ter uma ferramenta customizada de acordo com as necessidades exatas do nosso fluxo de trabalho é o que diferencia uma bancada eficiente de P&D. Essa fonte combina a alta corrente estável das linhas de PC com o ajuste fino e seguro do módulo Buck-Boost.</p>
+
+            <hr />
+
+            <ul class="actions" style="display: flex; justify-content: space-between; margin-top: 3em;">
+                <li><a href="../blog.html" class="button">Voltar ao Blog</a></li>
+                <li><a href="../index.html" class="button">Menu Principal</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer id="footer" style="margin-left: 0 !important; text-align: center;">
+        <div class="inner">
+            <ul class="copyright">
+                <li>&copy; 2026 Projetos by Sarah</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.poptrox.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
